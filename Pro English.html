@@ -1,0 +1,3514 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ProEnglish - Vietnamese Edition</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--primary:#2563eb;--primary-dark:#1d4ed8;--secondary:#64748b;--accent:#f59e0b;--light:#f8fafc;--dark:#0f172a;--success:#10b981;--danger:#ef4444;--radius:12px;--shadow:0 10px 25px rgba(2,6,23,.08);}
+    body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#eef2f7;color:#0f172a;}
+    header{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:18px 0;margin-bottom:22px;box-shadow:var(--shadow);}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 16px;}
+    .h-flex{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px}
+    .brand i{font-size:22px}
+    .user{display:flex;align-items:center;gap:10px}
+    .avatar{width:36px;height:36px;border-radius:50%;background:#fff;color:var(--primary);display:flex;align-items:center;justify-content:center;font-weight:700}
+    .grid{display:grid;grid-template-columns:320px 1fr;gap:22px}
+    .card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+    .progress{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff}
+    .progress .title{opacity:.9;margin-bottom:6px}
+    .progress .big{font-size:34px;font-weight:800;margin:6px 0 12px}
+    .bar{height:10px;background:rgba(255,255,255,.35);border-radius:999px;overflow:hidden}
+    .bar>span{display:block;height:100%;width:0;background:#fff;transition:width .35s}
+    .section-title{color:#475569;font-weight:700;letter-spacing:.3px;margin:14px 0 10px;text-transform:uppercase;font-size:13px}
+    .nav{display:flex;flex-direction:column;gap:8px}
+    .nav button{all:unset;background:#f8fafc;border:1px solid #e5e7eb;border-radius:10px;padding:12px 14px;display:flex;gap:10px;align-items:center;cursor:pointer}
+    .nav button:hover{background:#eef2ff;border-color:#c7d2fe}
+    .nav button.active{background:#e0f2fe;border-color:#bae6fd;color:#0c4a6e}
+    .nav i{width:18px;text-align:center}
+    .lesson{display:none}
+    .lesson.active{display:block}
+    h2{font-size:28px;margin-bottom:6px}
+    .meta{color:#64748b;margin-bottom:16px;display:flex;gap:14px;font-size:14px}
+    .objective{background:#f0f9ff;border-left:4px solid var(--primary);padding:14px;border-radius:10px;margin:14px 0}
+    .vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:16px 0}
+    .vcard{border:1px solid #e5e7eb;border-radius:12px;padding:14px}
+    .vcard .word{font-weight:800;color:#0f172a;font-size:18px}
+    .vcard .pron{color:#64748b;font-style:italic;margin:4px 0 6px}
+    .muted{color:#64748b}
+    .bubble{background:#f8fafc;border-left:3px solid var(--accent);padding:10px;border-radius:10px}
+    .btn{border:none;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+    .btn.primary{background:var(--primary);color:#fff}
+    .btn.secondary{background:#e2e8f0;color:#0f172a}
+    .btn.success{background:var(--success);color:#fff}
+    .btn.outline{background:#fff;border:1px solid #cbd5e1;color:#0f172a}
+    .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    .conv{background:#f0fdf4;border-radius:12px;padding:14px;margin:12px 0}
+    .conv .title{font-weight:800;color:#065f46;margin-bottom:8px}
+    .dialog-line{display:flex;gap:10px;margin:6px 0}
+    .speaker{font-weight:700;min-width:86px;color:#155e75}
+    .quiz{background:#fff7ed;border-radius:12px;padding:14px;margin-top:16px;border:1px solid #fde68a}
+    .q{font-weight:700;margin:10px 0}
+    .opt{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:10px;cursor:pointer;margin:8px 0}
+    .opt.selected{background:#dbeafe;border-color:#93c5fd}
+    .record{display:none;align-items:center;gap:10px;background:#fef2f2;border-radius:12px;padding:10px;margin-top:10px;color:#991b1b}
+    .pulse{width:10px;height:10px;border-radius:50%;background:#ef4444;animation:pulse 1.4s infinite}
+    @keyframes pulse{0%{transform:scale(.9);opacity:.7}50%{transform:scale(1.1);opacity:1}100%{transform:scale(.9);opacity:.7}}
+    .feedback{display:none;margin-top:10px;border-radius:10px;padding:10px}
+    .good{background:#dcfce7;border:1px solid #86efac;color:#14532d}
+    .bad{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412}
+    .actions{display:flex;justify-content:space-between;gap:10px;margin-top:16px;border-top:1px solid #e2e8f0;padding-top:12px}
+    .practice-section{background:#f8fafc;border-radius:12px;padding:16px;margin:20px 0}
+    .practice-title{font-size:20px;font-weight:700;margin-bottom:12px;color:#0f172a}
+    .vi-translation{color:#475569;font-style:italic;margin-left:10px;border-left:2px solid var(--accent);padding-left:8px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap h-flex">
+      <div class="brand"><i class="fa-solid fa-graduation-cap"></i> ProEnglish - Vietnamese</div>
+      <div class="user"><div class="avatar">TN</div><span>Thao Nguyen</span></div>
+    </div>
+  </header>
+
+  <div class="wrap grid">
+    <aside class="card">
+      <div class="card progress">
+        <div class="title">Course Progress</div>
+        <div class="big" id="progressText">0%</div>
+        <div class="bar"><span id="progressBar"></span></div>
+      </div>
+
+      <div class="section-title">Course Modules</div>
+      <div class="nav" id="nav">
+        <button onclick="showLesson('lesson1')" class="active"><i class="fa-solid fa-play"></i>Lesson 1: Greetings</button>
+        <button onclick="showLesson('lesson2')" class="locked"><i class="fa-solid fa-lock"></i>Lesson 2: Everyday</button>
+        <button onclick="showLesson('lesson3')" class="locked"><i class="fa-solid fa-lock"></i>Lesson 3: Travel</button>
+        <button onclick="showLesson('lesson4')" class="locked"><i class="fa-solid fa-lock"></i>Lesson 4: Dining</button>
+        <button onclick="showLesson('lesson5')" class="locked"><i class="fa-solid fa-lock"></i>Lesson 5: Business</button>
+        <button onclick="showLesson('lesson6')" class="locked"><i class="fa-solid fa-lock"></i>Lesson 6: Shopping</button>
+        <button onclick="showLesson('lesson7')" class="locked"><i class="fa-solid fa-lock"></i>Lesson 7: Health</button>
+        <button onclick="showLesson('lesson8')" class="locked"><i class="fa-solid fa-lock"></i>Lesson 8: Family</button>
+        <button onclick="showLesson('lesson9')" class="locked"><i class="fa-solid fa-lock"></i>Lesson 9: Weather</button>
+        <button onclick="showLesson('lesson10')" class="locked"><i class="fa-solid fa-lock"></i>Lesson 10: Numbers</button>
+      </div>
+
+      <button class="btn outline" style="width:100%;margin-top:12px" onclick="resetProgress()">
+        <i class="fa-solid fa-rotate"></i> Reset Progress
+      </button>
+    </aside>
+
+    <main class="card">
+      <!-- Lesson 1: Greetings & Introductions -->
+      <section id="lesson1" class="lesson active" data-num="1">
+        <h2>Lesson 1: Greetings & Introductions</h2>
+        <div class="meta"><span><i class="fa-regular fa-clock"></i> 40–50 min</span><span><i class="fa-solid fa-signal"></i> Beginner</span></div>
+        <div class="objective"><strong>Objectives:</strong> Learn basic greetings and introductions in English with Vietnamese translations.</div>
+        
+        <div class="section-title">Essential Phrases with Vietnamese Translation</div>
+        <div class="vgrid">
+          <div class="vcard">
+            <div class="word">Hello / Hi</div>
+            <div class="pron">/həˈloʊ/ /haɪ/</div>
+            <div class="muted">Xin chào (trang trọng/thân mật)</div>
+            <div class="bubble">Hello, my name is Lan. <span class="vi-translation">Xin chào, tôi tên là Lan.</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('Hello / Hi')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('Hello / Hi')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">Good morning</div>
+            <div class="pron">/ˈɡʊd ˈmɔːrnɪŋ/</div>
+            <div class="muted">Chào buổi sáng</div>
+            <div class="bubble">Good morning, everyone. <span class="vi-translation">Chào buổi sáng mọi người.</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('Good morning')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('Good morning')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">Nice to meet you</div>
+            <div class="pron">/naɪs tə ˈmiːt juː/</div>
+            <div class="muted">Rất vui được gặp bạn</div>
+            <div class="bubble">Nice to meet you, I'm Minh. <span class="vi-translation">Rất vui được gặp bạn, tôi là Minh.</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('Nice to meet you')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('Nice to meet you')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">How are you?</div>
+            <div class="pron">/haʊ ɑːr juː/</div>
+            <div class="muted">Bạn khỏe không?</div>
+            <div class="bubble">How are you today? <span class="vi-translation">Hôm nay bạn khỏe không?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('How are you?')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('How are you?')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">Conversation Practice (10 Dialogues)</div>
+
+        <!-- Conversation 1 -->
+        <div class="conv">
+          <div class="title">1. First Meeting at School</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Good morning. My name is David. What's your name? 
+              <span class="vi-translation">Chào buổi sáng. Tôi tên là David. Tên bạn là gì?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Good morning. I'm Linh. Nice to meet you.
+              <span class="vi-translation">Chào buổi sáng. Tôi là Linh. Rất vui được gặp bạn.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Good morning. My name is David. What\'s your name? Good morning. I\'m Linh. Nice to meet you.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Good morning. My name is David. What\'s your name?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 2 -->
+        <div class="conv">
+          <div class="title">2. Meeting a New Colleague</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Hello, I'm Sarah. I'm new here.
+              <span class="vi-translation">Xin chào, tôi là Sarah. Tôi mới ở đây.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Welcome Sarah! I'm Minh. Nice to meet you.
+              <span class="vi-translation">Chào mừng Sarah! Tôi là Minh. Rất vui được gặp bạn.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Hello, I\'m Sarah. I\'m new here. Welcome Sarah! I\'m Minh. Nice to meet you.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Hello, I\'m Sarah. I\'m new here.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 3 -->
+        <div class="conv">
+          <div class="title">3. Formal Introduction</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Good afternoon. My name is Dr. Smith.
+              <span class="vi-translation">Chào buổi chiều. Tôi là Bác sĩ Smith.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Good afternoon, Dr. Smith. I'm Professor Nguyen.
+              <span class="vi-translation">Chào buổi chiều, Bác sĩ Smith. Tôi là Giáo sư Nguyễn.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Good afternoon. My name is Dr. Smith. Good afternoon, Dr. Smith. I\'m Professor Nguyen.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Good afternoon. My name is Dr. Smith.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 4 -->
+        <div class="conv">
+          <div class="title">4. Casual Meeting</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Hi there! I'm Alex. What's your name?
+              <span class="vi-translation">Chào bạn! Tôi là Alex. Tên bạn là gì?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Hey Alex! I'm Mai. Nice to meet you!
+              <span class="vi-translation">Chào Alex! Tôi là Mai. Rất vui được gặp bạn!</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Hi there! I\'m Alex. What\'s your name? Hey Alex! I\'m Mai. Nice to meet you!')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Hi there! I\'m Alex. What\'s your name?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 5 -->
+        <div class="conv">
+          <div class="title">5. Business Meeting Introduction</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Good morning everyone. Let me introduce myself. I'm Mr. Brown from Marketing.
+              <span class="vi-translation">Chào buổi sáng mọi người. Để tôi giới thiệu. Tôi là Ông Brown từ bộ phận Marketing.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Welcome Mr. Brown. I'm Ms. Linh, the project manager.
+              <span class="vi-translation">Chào mừng Ông Brown. Tôi là Cô Linh, quản lý dự án.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Good morning everyone. Let me introduce myself. I\'m Mr. Brown from Marketing. Welcome Mr. Brown. I\'m Ms. Linh, the project manager.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Good morning everyone. Let me introduce myself. I\'m Mr. Brown from Marketing.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 6 -->
+        <div class="conv">
+          <div class="title">6. University Introduction</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Hello, I'm from England. My name is James.
+              <span class="vi-translation">Xin chào, tôi đến từ Anh. Tên tôi là James.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Nice to meet you James. I'm Hoa from Vietnam.
+              <span class="vi-translation">Rất vui được gặp bạn James. Tôi là Hoa từ Việt Nam.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Hello, I\'m from England. My name is James. Nice to meet you James. I\'m Hoa from Vietnam.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Hello, I\'m from England. My name is James.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 7 -->
+        <div class="conv">
+          <div class="title">7. Family Introduction</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>This is my sister, Anna. Anna, this is my friend Linh.
+              <span class="vi-translation">Đây là chị gái tôi, Anna. Anna, đây là bạn tôi Linh.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Hello Anna! Nice to meet you.
+              <span class="vi-translation">Chào Anna! Rất vui được gặp bạn.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('This is my sister, Anna. Anna, this is my friend Linh. Hello Anna! Nice to meet you.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('This is my sister, Anna. Anna, this is my friend Linh.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 8 -->
+        <div class="conv">
+          <div class="title">8. Evening Greeting</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Good evening. I don't think we've met. I'm David.
+              <span class="vi-translation">Chào buổi tối. Tôi không nghĩ chúng ta đã gặp nhau. Tôi là David.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Good evening David. I'm Sarah. Nice to meet you.
+              <span class="vi-translation">Chào buổi tối David. Tôi là Sarah. Rất vui được gặp bạn.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Good evening. I don\'t think we\'ve met. I\'m David. Good evening David. I\'m Sarah. Nice to meet you.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Good evening. I don\'t think we\'ve met. I\'m David.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 9 -->
+        <div class="conv">
+          <div class="title">9. Phone Introduction</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Hello, this is Michael speaking. May I speak with Ms. Lan?
+              <span class="vi-translation">Xin chào, tôi là Michael đang nói. Tôi có thể nói chuyện với Cô Lan được không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Speaking. How can I help you, Michael?
+              <span class="vi-translation">Tôi đang nghe. Tôi có thể giúp gì cho bạn, Michael?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Hello, this is Michael speaking. May I speak with Ms. Lan? Speaking. How can I help you, Michael?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Hello, this is Michael speaking. May I speak with Ms. Lan?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 10 -->
+        <div class="conv">
+          <div class="title">10. International Meeting</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Hi, I'm from Australia. My name is John.
+              <span class="vi-translation">Xin chào, tôi đến từ Úc. Tên tôi là John.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Welcome to Vietnam, John! I'm Mai. Nice to meet you.
+              <span class="vi-translation">Chào mừng đến Việt Nam, John! Tôi là Mai. Rất vui được gặp bạn.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Hi, I\'m from Australia. My name is John. Welcome to Vietnam, John! I\'m Mai. Nice to meet you.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Hi, I\'m from Australia. My name is John.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Practice Questions Section -->
+        <div class="practice-section">
+          <div class="practice-title">Practice Questions - Lesson 1</div>
+          
+          <div class="quiz">
+            <div class="q">1. How do you say "Xin chào" in English?</div>
+            <div class="opt" onclick="selectOption(this)">A. Goodbye</div>
+            <div class="opt" onclick="selectOption(this)">B. Hello</div>
+            <div class="opt" onclick="selectOption(this)">C. Thank you</div>
+            <div class="opt" onclick="selectOption(this)">D. Please</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">2. What does "Nice to meet you" mean in Vietnamese?</div>
+            <div class="opt" onclick="selectOption(this)">A. Tạm biệt bạn</div>
+            <div class="opt" onclick="selectOption(this)">B. Cảm ơn bạn</div>
+            <div class="opt" onclick="selectOption(this)">C. Rất vui được gặp bạn</div>
+            <div class="opt" onclick="selectOption(this)">D. Xin lỗi bạn</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">3. Complete the sentence: "Good ______, everyone."</div>
+            <div class="opt" onclick="selectOption(this)">A. afternoon</div>
+            <div class="opt" onclick="selectOption(this)">B. night</div>
+            <div class="opt" onclick="selectOption(this)">C. morning</div>
+            <div class="opt" onclick="selectOption(this)">D. evening</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">4. How do you respond to "What's your name?"</div>
+            <div class="opt" onclick="selectOption(this)">A. I'm fine, thank you</div>
+            <div class="opt" onclick="selectOption(this)">B. My name is Linh</div>
+            <div class="opt" onclick="selectOption(this)">C. Nice to meet you</div>
+            <div class="opt" onclick="selectOption(this)">D. Good morning</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">5. Translate to English: "Tôi tên là David"</div>
+            <div class="opt" onclick="selectOption(this)">A. I am David</div>
+            <div class="opt" onclick="selectOption(this)">B. My name David</div>
+            <div class="opt" onclick="selectOption(this)">C. My name is David</div>
+            <div class="opt" onclick="selectOption(this)">D. I name is David</div>
+          </div>
+
+          <button class="btn success" onclick="checkAnswers(1)" style="margin-top: 15px;">
+            <i class="fa-solid fa-check"></i> Check Answers
+          </button>
+          <div id="result1" style="margin-top: 10px; font-weight: bold;"></div>
+        </div>
+
+        <div class="actions">
+          <button class="btn secondary" disabled><i class="fa-solid fa-arrow-left"></i> Previous</button>
+          <button class="btn primary" onclick="completeLesson(1)">Complete Lesson <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </section>
+
+      <!-- Lesson 2: Everyday Conversations -->
+      <section id="lesson2" class="lesson" data-num="2">
+        <h2>Lesson 2: Everyday Conversations</h2>
+        <div class="meta"><span><i class="fa-regular fa-clock"></i> 40–50 min</span><span><i class="fa-solid fa-signal"></i> Beginner</span></div>
+        <div class="objective"><strong>Objectives:</strong> Learn common everyday phrases and conversations.</div>
+        
+        <div class="section-title">Essential Phrases with Vietnamese Translation</div>
+        <div class="vgrid">
+          <div class="vcard">
+            <div class="word">How are you?</div>
+            <div class="pron">/haʊ ɑːr juː/</div>
+            <div class="muted">Bạn khỏe không?</div>
+            <div class="bubble">How are you today? <span class="vi-translation">Hôm nay bạn khỏe không?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('How are you?')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('How are you?')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">I'm fine, thanks</div>
+            <div class="pron">/aɪm faɪn θæŋks/</div>
+            <div class="muted">Tôi khỏe, cảm ơn</div>
+            <div class="bubble">I'm fine, thanks. And you? <span class="vi-translation">Tôi khỏe, cảm ơn. Còn bạn?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('I\'m fine, thanks')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('I\'m fine, thanks')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">What do you do?</div>
+            <div class="pron">/wɒt duː juː duː/</div>
+            <div class="muted">Bạn làm nghề gì?</div>
+            <div class="bubble">What do you do for a living? <span class="vi-translation">Bạn làm nghề gì để kiếm sống?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('What do you do?')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('What do you do?')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">Where do you live?</div>
+            <div class="pron">/weər duː juː lɪv/</div>
+            <div class="muted">Bạn sống ở đâu?</div>
+            <div class="bubble">Where do you live in Hanoi? <span class="vi-translation">Bạn sống ở đâu tại Hà Nội?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('Where do you live?')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('Where do you live?')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">Conversation Practice (10 Dialogues)</div>
+
+        <!-- Conversation 1 -->
+        <div class="conv">
+          <div class="title">1. Morning Coffee Chat</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Good morning! How are you today?
+              <span class="vi-translation">Chào buổi sáng! Hôm nay bạn khỏe không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>I'm great, thanks! How about you?
+              <span class="vi-translation">Tôi rất khỏe, cảm ơn! Còn bạn thì sao?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Good morning! How are you today? I\'m great, thanks! How about you?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Good morning! How are you today?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 2 -->
+        <div class="conv">
+          <div class="title">2. Asking About Work</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>What do you do for work?
+              <span class="vi-translation">Bạn làm nghề gì?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>I'm a teacher. I teach English.
+              <span class="vi-translation">Tôi là giáo viên. Tôi dạy tiếng Anh.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('What do you do for work? I\'m a teacher. I teach English.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('What do you do for work?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 3 -->
+        <div class="conv">
+          <div class="title">3. Talking About Family</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Do you have any brothers or sisters?
+              <span class="vi-translation">Bạn có anh chị em không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Yes, I have one brother and one sister.
+              <span class="vi-translation">Có, tôi có một anh trai và một chị gái.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Do you have any brothers or sisters? Yes, I have one brother and one sister.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Do you have any brothers or sisters?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 4 -->
+        <div class="conv">
+          <div class="title">4. Discussing Hobbies</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>What do you like to do in your free time?
+              <span class="vi-translation">Bạn thích làm gì trong thời gian rảnh?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>I enjoy reading books and watching movies.
+              <span class="vi-translation">Tôi thích đọc sách và xem phim.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('What do you like to do in your free time? I enjoy reading books and watching movies.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('What do you like to do in your free time?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 5 -->
+        <div class="conv">
+          <div class="title">5. Talking About Weather</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>It's a beautiful day today, isn't it?
+              <span class="vi-translation">Hôm nay trời đẹp nhỉ?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Yes, the weather is perfect for a walk.
+              <span class="vi-translation">Đúng vậy, thời tiết hoàn hảo để đi dạo.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('It\'s a beautiful day today, isn\'t it? Yes, the weather is perfect for a walk.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('It\'s a beautiful day today, isn\'t it?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 6 -->
+        <div class="conv">
+          <div class="title">6. Making Plans</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Would you like to have coffee this weekend?
+              <span class="vi-translation">Bạn có muốn uống cà phê cuối tuần này không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>That sounds great! Saturday afternoon works for me.
+              <span class="vi-translation">Nghe hay đấy! Chiều thứ Bảy được đấy.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Would you like to have coffee this weekend? That sounds great! Saturday afternoon works for me.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Would you like to have coffee this weekend?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 7 -->
+        <div class="conv">
+          <div class="title">7. Asking for Help</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Could you help me with this, please?
+              <span class="vi-translation">Bạn có thể giúp tôi việc này được không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Of course! What do you need help with?
+              <span class="vi-translation">Tất nhiên! Bạn cần giúp gì?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Could you help me with this, please? Of course! What do you need help with?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Could you help me with this, please?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 8 -->
+        <div class="conv">
+          <div class="title">8. Shopping Conversation</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>How much does this shirt cost?
+              <span class="vi-translation">Cái áo này giá bao nhiêu?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>It's 250,000 VND. Would you like to try it on?
+              <span class="vi-translation">Giá 250,000 đồng. Bạn có muốn thử nó không?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('How much does this shirt cost? It\'s 250,000 VND. Would you like to try it on?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('How much does this shirt cost?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 9 -->
+        <div class="conv">
+          <div class="title">9. Daily Routine</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>What time do you usually wake up?
+              <span class="vi-translation">Bạn thường thức dậy lúc mấy giờ?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>I wake up at 6:30 every morning.
+              <span class="vi-translation">Tôi thức dậy lúc 6:30 mỗi sáng.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('What time do you usually wake up? I wake up at 6:30 every morning.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('What time do you usually wake up?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 10 -->
+        <div class="conv">
+          <div class="title">10. Weekend Plans</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>What are your plans for the weekend?
+              <span class="vi-translation">Kế hoạch cuối tuần của bạn là gì?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>I'm going to visit my family in the countryside.
+              <span class="vi-translation">Tôi sẽ về thăm gia đình ở quê.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('What are your plans for the weekend? I\'m going to visit my family in the countryside.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('What are your plans for the weekend?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Practice Questions for Lesson 2 -->
+        <div class="practice-section">
+          <div class="practice-title">Practice Questions - Lesson 2</div>
+          
+          <div class="quiz">
+            <div class="q">1. What is the response to "How are you?"</div>
+            <div class="opt" onclick="selectOption(this)">A. Hello</div>
+            <div class="opt" onclick="selectOption(this)">B. I'm fine, thanks</div>
+            <div class="opt" onclick="selectOption(this)">C. My name is...</div>
+            <div class="opt" onclick="selectOption(this)">D. Goodbye</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">2. How do you ask "Bạn làm nghề gì?" in English?</div>
+            <div class="opt" onclick="selectOption(this)">A. How are you?</div>
+            <div class="opt" onclick="selectOption(this)">B. What is your job?</div>
+            <div class="opt" onclick="selectOption(this)">C. What do you do?</div>
+            <div class="opt" onclick="selectOption(this)">D. Where do you work?</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">3. What does "And you?" mean in Vietnamese?</div>
+            <div class="opt" onclick="selectOption(this)">A. Còn bạn?</div>
+            <div class="opt" onclick="selectOption(this)">B. Tôi ổn</div>
+            <div class="opt" onclick="selectOption(this)">C. Cảm ơn</div>
+            <div class="opt" onclick="selectOption(this)">D. Tạm biệt</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">4. Translate: "Tôi sống ở Hà Nội"</div>
+            <div class="opt" onclick="selectOption(this)">A. I work in Hanoi</div>
+            <div class="opt" onclick="selectOption(this)">B. I visit Hanoi</div>
+            <div class="opt" onclick="selectOption(this)">C. I live in Hanoi</div>
+            <div class="opt" onclick="selectOption(this)">D. I like Hanoi</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">5. What does "How's it going?" mean?</div>
+            <div class="opt" onclick="selectOption(this)">A. Bạn đang đi đâu?</div>
+            <div class="opt" onclick="selectOption(this)">B. Dạo này thế nào?</div>
+            <div class="opt" onclick="selectOption(this)">C. Bạn làm gì?</div>
+            <div class="opt" onclick="selectOption(this)">D. Bạn có khỏe không?</div>
+          </div>
+
+          <button class="btn success" onclick="checkAnswers(2)" style="margin-top: 15px;">
+            <i class="fa-solid fa-check"></i> Check Answers
+          </button>
+          <div id="result2" style="margin-top: 10px; font-weight: bold;"></div>
+        </div>
+
+        <div class="actions">
+          <button class="btn secondary" onclick="showLesson('lesson1')"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+          <button class="btn primary" onclick="completeLesson(2)">Complete Lesson <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </section>
+
+      <!-- Lesson 3: Travel & Directions -->
+      <section id="lesson3" class="lesson" data-num="3">
+        <h2>Lesson 3: Travel & Directions</h2>
+        <div class="meta"><span><i class="fa-regular fa-clock"></i> 40–50 min</span><span><i class="fa-solid fa-signal"></i> Beginner</span></div>
+        <div class="objective"><strong>Objectives:</strong> Learn travel-related phrases and how to ask for directions.</div>
+        
+        <div class="section-title">Essential Phrases with Vietnamese Translation</div>
+        <div class="vgrid">
+          <div class="vcard">
+            <div class="word">Where is the station?</div>
+            <div class="pron">/weər ɪz ðə ˈsteɪʃən/</div>
+            <div class="muted">Nhà ga ở đâu?</div>
+            <div class="bubble">Where is the train station? <span class="vi-translation">Nhà ga xe lửa ở đâu?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('Where is the station?')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('Where is the station?')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">Turn left / right</div>
+            <div class="pron">/tɜːrn left / raɪt/</div>
+            <div class="muted">Rẽ trái / phải</div>
+            <div class="bubble">Turn left at the corner. <span class="vi-translation">Rẽ trái ở góc đường.</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('Turn left / right')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('Turn left / right')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">Go straight ahead</div>
+            <div class="pron">/ɡoʊ streɪt əˈhɛd/</div>
+            <div class="muted">Đi thẳng</div>
+            <div class="bubble">Go straight ahead for two blocks. <span class="vi-translation">Đi thẳng hai dãy nhà.</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('Go straight ahead')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('Go straight ahead')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">How much is a ticket?</div>
+            <div class="pron">/haʊ mʌtʃ ɪz ə ˈtɪkɪt/</div>
+            <div class="muted">Một vé giá bao nhiêu?</div>
+            <div class="bubble">How much is a ticket to Da Nang? <span class="vi-translation">Một vé đi Đà Nẵng giá bao nhiêu?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('How much is a ticket?')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('How much is a ticket?')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">Conversation Practice (10 Dialogues)</div>
+
+        <!-- Conversation 1 -->
+        <div class="conv">
+          <div class="title">1. Asking for Train Station</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Excuse me, where is the train station?
+              <span class="vi-translation">Xin lỗi, nhà ga xe lửa ở đâu?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>It's straight ahead, about 500 meters.
+              <span class="vi-translation">Đi thẳng, khoảng 500 mét.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Excuse me, where is the train station? It\'s straight ahead, about 500 meters.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Excuse me, where is the train station?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 2 -->
+        <div class="conv">
+          <div class="title">2. Buying a Bus Ticket</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>I'd like a ticket to the city center, please.
+              <span class="vi-translation">Tôi muốn một vé đến trung tâm thành phố.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>That will be 15,000 VND. Here's your ticket.
+              <span class="vi-translation">Giá là 15,000 đồng. Đây là vé của bạn.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('I\'d like a ticket to the city center, please. That will be 15,000 VND. Here\'s your ticket.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('I\'d like a ticket to the city center, please.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 3 -->
+        <div class="conv">
+          <div class="title">3. Asking for Directions to Hotel</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Can you tell me how to get to the Hilton Hotel?
+              <span class="vi-translation">Bạn có thể chỉ tôi đường đến khách sạn Hilton không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Turn right at the next traffic light, then go straight.
+              <span class="vi-translation">Rẽ phải ở đèn giao thông tiếp theo, sau đó đi thẳng.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Can you tell me how to get to the Hilton Hotel? Turn right at the next traffic light, then go straight.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Can you tell me how to get to the Hilton Hotel?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 4 -->
+        <div class="conv">
+          <div class="title">4. At the Airport Check-in</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>I'd like to check in for flight VN123 to Hanoi.
+              <span class="vi-translation">Tôi muốn làm thủ tục cho chuyến bay VN123 đến Hà Nội.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>May I see your passport, please?
+              <span class="vi-translation">Tôi có thể xem hộ chiếu của bạn được không?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('I\'d like to check in for flight VN123 to Hanoi. May I see your passport, please?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('I\'d like to check in for flight VN123 to Hanoi.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 5 -->
+        <div class="conv">
+          <div class="title">5. Taking a Taxi</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Taxi! Can you take me to the Old Quarter?
+              <span class="vi-translation">Taxi! Bạn có thể đưa tôi đến Phố Cổ không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Sure, hop in. Do you know the exact address?
+              <span class="vi-translation">Được thôi, lên xe đi. Bạn có biết địa chỉ chính xác không?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Taxi! Can you take me to the Old Quarter? Sure, hop in. Do you know the exact address?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Taxi! Can you take me to the Old Quarter?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 6 -->
+        <div class="conv">
+          <div class="title">6. Hotel Reservation</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>I have a reservation under the name Nguyen.
+              <span class="vi-translation">Tôi có đặt phòng trước dưới tên Nguyễn.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Yes, Mr. Nguyen. You have a room for three nights.
+              <span class="vi-translation">Vâng, Ông Nguyễn. Ông có phòng cho ba đêm.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('I have a reservation under the name Nguyen. Yes, Mr. Nguyen. You have a room for three nights.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('I have a reservation under the name Nguyen.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 7 -->
+        <div class="conv">
+          <div class="title">7. Asking About Bus Schedule</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>What time does the next bus to Da Lat leave?
+              <span class="vi-translation">Xe buýt tiếp theo đi Đà Lạt khởi hành lúc mấy giờ?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>The next bus leaves at 2:30 PM from platform 3.
+              <span class="vi-translation">Xe buýt tiếp theo khởi hành lúc 2:30 chiều từ sân ga số 3.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('What time does the next bus to Da Lat leave? The next bus leaves at 2:30 PM from platform 3.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('What time does the next bus to Da Lat leave?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 8 -->
+        <div class="conv">
+          <div class="title">8. Renting a Motorbike</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>How much does it cost to rent a motorbike for one day?
+              <span class="vi-translation">Giá thuê xe máy một ngày là bao nhiêu?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>It's 150,000 VND per day, including insurance.
+              <span class="vi-translation">Giá 150,000 đồng mỗi ngày, bao gồm bảo hiểm.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('How much does it cost to rent a motorbike for one day? It\'s 150,000 VND per day, including insurance.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('How much does it cost to rent a motorbike for one day?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 9 -->
+        <div class="conv">
+          <div class="title">9. Asking About Tourist Attractions</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>What are the must-see places in this city?
+              <span class="vi-translation">Những địa điểm không thể bỏ qua trong thành phố này là gì?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>You should visit the museum and the central market.
+              <span class="vi-translation">Bạn nên thăm bảo tàng và chợ trung tâm.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('What are the must-see places in this city? You should visit the museum and the central market.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('What are the must-see places in this city?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 10 -->
+        <div class="conv">
+          <div class="title">10. Getting Lost</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>I think I'm lost. Can you help me find this address?
+              <span class="vi-translation">Tôi nghĩ tôi bị lạc. Bạn có thể giúp tôi tìm địa chỉ này không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Don't worry. You're actually very close. It's just around the corner.
+              <span class="vi-translation">Đừng lo. Bạn thực ra đang rất gần. Nó ngay quanh góc đó.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('I think I\'m lost. Can you help me find this address? Don\'t worry. You\'re actually very close. It\'s just around the corner.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('I think I\'m lost. Can you help me find this address?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Practice Questions for Lesson 3 -->
+        <div class="practice-section">
+          <div class="practice-title">Practice Questions - Lesson 3</div>
+          
+          <div class="quiz">
+            <div class="q">1. How do you ask "Nhà ga ở đâu?" in English?</div>
+            <div class="opt" onclick="selectOption(this)">A. Where is the hotel?</div>
+            <div class="opt" onclick="selectOption(this)">B. Where is the station?</div>
+            <div class="opt" onclick="selectOption(this)">C. Where is the restaurant?</div>
+            <div class="opt" onclick="selectOption(this)">D. Where is the bank?</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">2. What does "Turn left" mean in Vietnamese?</div>
+            <div class="opt" onclick="selectOption(this)">A. Đi thẳng</div>
+            <div class="opt" onclick="selectOption(this)">B. Rẽ phải</div>
+            <div class="opt" onclick="selectOption(this)">C. Rẽ trái</div>
+            <div class="opt" onclick="selectOption(this)">D. Quay lại</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">3. How do you say "Đi thẳng" in English?</div>
+            <div class="opt" onclick="selectOption(this)">A. Turn around</div>
+            <div class="opt" onclick="selectOption(this)">B. Go straight ahead</div>
+            <div class="opt" onclick="selectOption(this)">C. Stop here</div>
+            <div class="opt" onclick="selectOption(this)">D. Cross the road</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">4. What is the question for "Một vé giá bao nhiêu?"</div>
+            <div class="opt" onclick="selectOption(this)">A. Where is the ticket?</div>
+            <div class="opt" onclick="selectOption(this)">B. How much is a ticket?</div>
+            <div class="opt" onclick="selectOption(this)">C. When is the train?</div>
+            <div class="opt" onclick="selectOption(this)">D. What time is it?</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">5. Translate: "Rẽ phải ở góc đường"</div>
+            <div class="opt" onclick="selectOption(this)">A. Turn left at the corner</div>
+            <div class="opt" onclick="selectOption(this)">B. Go straight at the corner</div>
+            <div class="opt" onclick="selectOption(this)">C. Turn right at the corner</div>
+            <div class="opt" onclick="selectOption(this)">D. Stop at the corner</div>
+          </div>
+
+          <button class="btn success" onclick="checkAnswers(3)" style="margin-top: 15px;">
+            <i class="fa-solid fa-check"></i> Check Answers
+          </button>
+          <div id="result3" style="margin-top: 10px; font-weight: bold;"></div>
+        </div>
+
+        <div class="actions">
+          <button class="btn secondary" onclick="showLesson('lesson2')"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+          <button class="btn primary" onclick="completeLesson(3)">Complete Lesson <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </section>
+
+      <!-- Lesson 4: Dining & Food -->
+      <section id="lesson4" class="lesson" data-num="4">
+        <h2>Lesson 4: Dining & Food</h2>
+        <div class="meta"><span><i class="fa-regular fa-clock"></i> 40–50 min</span><span><i class="fa-solid fa-signal"></i> Beginner</span></div>
+        <div class="objective"><strong>Objectives:</strong> Learn restaurant vocabulary and how to order food.</div>
+        
+        <div class="section-title">Essential Phrases with Vietnamese Translation</div>
+        <div class="vgrid">
+          <div class="vcard">
+            <div class="word">I'd like to order</div>
+            <div class="pron">/aɪd laɪk tə ˈɔːrdər/</div>
+            <div class="muted">Tôi muốn gọi món</div>
+            <div class="bubble">I'd like to order pho. <span class="vi-translation">Tôi muốn gọi phở.</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('I\'d like to order')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('I\'d like to order')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">The menu, please</div>
+            <div class="pron">/ðə ˈmenjuː pliːz/</div>
+            <div class="muted">Cho tôi xin thực đơn</div>
+            <div class="bubble">Can I see the menu, please? <span class="vi-translation">Tôi có thể xem thực đơn được không?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('The menu, please')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('The menu, please')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">What do you recommend?</div>
+            <div class="pron">/wɒt duː juː ˌrekəˈmend/</div>
+            <div class="muted">Bạn gợi ý món gì?</div>
+            <div class="bubble">What do you recommend? <span class="vi-translation">Bạn gợi ý món gì?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('What do you recommend?')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('What do you recommend?')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">The bill, please</div>
+            <div class="pron">/ðə bɪl pliːz/</div>
+            <div class="muted">Tính tiền giúp tôi</div>
+            <div class="bubble">Can I have the bill, please? <span class="vi-translation">Tôi có thể thanh toán được không?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('The bill, please')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('The bill, please')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">Conversation Practice (10 Dialogues)</div>
+
+        <!-- Conversation 1 -->
+        <div class="conv">
+          <div class="title">1. Ordering at a Restaurant</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Are you ready to order?
+              <span class="vi-translation">Bạn đã sẵn sàng gọi món chưa?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Yes, I'd like the grilled chicken and a salad.
+              <span class="vi-translation">Vâng, tôi muốn gà nướng và salad.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Are you ready to order? Yes, I\'d like the grilled chicken and a salad.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Are you ready to order?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 2 -->
+        <div class="conv">
+          <div class="title">2. Asking for Recommendations</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>What do you recommend today?
+              <span class="vi-translation">Hôm nay bạn gợi ý món gì?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Our seafood pho is very popular. Would you like to try it?
+              <span class="vi-translation">Phở hải sản của chúng tôi rất được ưa chuộng. Bạn có muốn thử không?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('What do you recommend today? Our seafood pho is very popular. Would you like to try it?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('What do you recommend today?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 3 -->
+        <div class="conv">
+          <div class="title">3. Special Dietary Requirements</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>I'm vegetarian. Do you have vegetarian options?
+              <span class="vi-translation">Tôi ăn chay. Bạn có món chay không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Yes, we have several vegetarian dishes. The tofu curry is excellent.
+              <span class="vi-translation">Có, chúng tôi có nhiều món chay. Cà ri đậu phụ rất ngon.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('I\'m vegetarian. Do you have vegetarian options? Yes, we have several vegetarian dishes. The tofu curry is excellent.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('I\'m vegetarian. Do you have vegetarian options?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 4 -->
+        <div class="conv">
+          <div class="title">4. Ordering Drinks</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>What would you like to drink?
+              <span class="vi-translation">Bạn muốn uống gì?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>I'll have a glass of orange juice, please.
+              <span class="vi-translation">Tôi muốn một ly nước cam, làm ơn.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('What would you like to drink? I\'ll have a glass of orange juice, please.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('What would you like to drink?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 5 -->
+        <div class="conv">
+          <div class="title">5. Asking About Spiciness</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Is this dish very spicy?
+              <span class="vi-translation">Món này có cay không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>It's moderately spicy. Would you like it less spicy?
+              <span class="vi-translation">Nó cay vừa phải. Bạn có muốn ít cay hơn không?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Is this dish very spicy? It\'s moderately spicy. Would you like it less spicy?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Is this dish very spicy?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 6 -->
+        <div class="conv">
+          <div class="title">6. Complimenting the Food</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>This food is delicious! Please compliment the chef.
+              <span class="vi-translation">Thức ăn này ngon quá! Làm ơn khen ngợi đầu bếp giúp tôi.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Thank you! I'll let the chef know you enjoyed it.
+              <span class="vi-translation">Cảm ơn! Tôi sẽ nói với đầu bếp rằng bạn thích món ăn.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('This food is delicious! Please compliment the chef. Thank you! I\'ll let the chef know you enjoyed it.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('This food is delicious! Please compliment the chef.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 7 -->
+        <div class="conv">
+          <div class="title">7. Asking for the Bill</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Could we have the bill, please?
+              <span class="vi-translation">Chúng tôi có thể thanh toán được không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Of course. Would you like to pay together or separately?
+              <span class="vi-translation">Tất nhiên. Bạn muốn thanh toán chung hay riêng?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Could we have the bill, please? Of course. Would you like to pay together or separately?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Could we have the bill, please?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 8 -->
+        <div class="conv">
+          <div class="title">8. Ordering Takeaway</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>I'd like to order two banh mi for takeaway.
+              <span class="vi-translation">Tôi muốn đặt hai bánh mì mang đi.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Certainly. That will be ready in about 10 minutes.
+              <span class="vi-translation">Chắc chắn rồi. Sẽ sẵn sàng trong khoảng 10 phút.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('I\'d like to order two banh mi for takeaway. Certainly. That will be ready in about 10 minutes.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('I\'d like to order two banh mi for takeaway.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 9 -->
+        <div class="conv">
+          <div class="title">9. Making a Reservation</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>I'd like to make a reservation for four people at 7 PM.
+              <span class="vi-translation">Tôi muốn đặt bàn cho bốn người lúc 7 giờ tối.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Certainly. May I have your name, please?
+              <span class="vi-translation">Chắc chắn rồi. Tôi có thể biết tên bạn được không?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('I\'d like to make a reservation for four people at 7 PM. Certainly. May I have your name, please?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('I\'d like to make a reservation for four people at 7 PM.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 10 -->
+        <div class="conv">
+          <div class="title">10. Food Delivery</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Do you deliver to 123 Main Street?
+              <span class="vi-translation">Bạn có giao hàng đến 123 Đường Chính không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Yes, we do. Your order will arrive in 30-40 minutes.
+              <span class="vi-translation">Có, chúng tôi có giao. Đơn hàng của bạn sẽ đến trong 30-40 phút.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Do you deliver to 123 Main Street? Yes, we do. Your order will arrive in 30-40 minutes.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Do you deliver to 123 Main Street?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Practice Questions for Lesson 4 -->
+        <div class="practice-section">
+          <div class="practice-title">Practice Questions - Lesson 4</div>
+          
+          <div class="quiz">
+            <div class="q">1. How do you say "Tôi muốn gọi món" in English?</div>
+            <div class="opt" onclick="selectOption(this)">A. I want to pay</div>
+            <div class="opt" onclick="selectOption(this)">B. I'd like to order</div>
+            <div class="opt" onclick="selectOption(this)">C. I need water</div>
+            <div class="opt" onclick="selectOption(this)">D. I like food</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">2. What does "The menu, please" mean?</div>
+            <div class="opt" onclick="selectOption(this)">A. Tính tiền giúp tôi</div>
+            <div class="opt" onclick="selectOption(this)">B. Cho tôi xin thực đơn</div>
+            <div class="opt" onclick="selectOption(this)">C. Món này ngon không?</div>
+            <div class="opt" onclick="selectOption(this)">D. Tôi muốn gọi món</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">3. How do you ask for recommendations in a restaurant?</div>
+            <div class="opt" onclick="selectOption(this)">A. Where is the toilet?</div>
+            <div class="opt" onclick="selectOption(this)">B. How much is this?</div>
+            <div class="opt" onclick="selectOption(this)">C. What do you recommend?</div>
+            <div class="opt" onclick="selectOption(this)">D. When do you close?</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">4. Translate: "Tính tiền giúp tôi"</div>
+            <div class="opt" onclick="selectOption(this)">A. The menu, please</div>
+            <div class="opt" onclick="selectOption(this)">B. The bill, please</div>
+            <div class="opt" onclick="selectOption(this)">C. Water, please</div>
+            <div class="opt" onclick="selectOption(this)">D. Food, please</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">5. What is the response to "Are you ready to order?"</div>
+            <div class="opt" onclick="selectOption(this)">A. Yes, I'd like the chicken</div>
+            <div class="opt" onclick="selectOption(this)">B. No, I'm not hungry</div>
+            <div class="opt" onclick="selectOption(this)">C. Where is the restroom?</div>
+            <div class="opt" onclick="selectOption(this)">D. How much does it cost?</div>
+          </div>
+
+          <button class="btn success" onclick="checkAnswers(4)" style="margin-top: 15px;">
+            <i class="fa-solid fa-check"></i> Check Answers
+          </button>
+          <div id="result4" style="margin-top: 10px; font-weight: bold;"></div>
+        </div>
+
+        <div class="actions">
+          <button class="btn secondary" onclick="showLesson('lesson3')"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+          <button class="btn primary" onclick="completeLesson(4)">Complete Lesson <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </section>
+
+      <!-- Lesson 5: Business English -->
+      <section id="lesson5" class="lesson" data-num="5">
+        <h2>Lesson 5: Business English</h2>
+        <div class="meta"><span><i class="fa-regular fa-clock"></i> 40–50 min</span><span><i class="fa-solid fa-signal"></i> Beginner</span></div>
+        <div class="objective"><strong>Objectives:</strong> Learn essential business communication phrases.</div>
+        
+        <div class="section-title">Essential Phrases with Vietnamese Translation</div>
+        <div class="vgrid">
+          <div class="vcard">
+            <div class="word">I'm responsible for</div>
+            <div class="pron">/aɪm rɪˈspɒnsəbl fɔːr/</div>
+            <div class="muted">Tôi chịu trách nhiệm về</div>
+            <div class="bubble">I'm responsible for marketing. <span class="vi-translation">Tôi chịu trách nhiệm về marketing.</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('I\'m responsible for')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('I\'m responsible for')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">Let's schedule a meeting</div>
+            <div class="pron">/lets ˈʃedjuːl ə ˈmiːtɪŋ/</div>
+            <div class="muted">Hãy lên lịch họp</div>
+            <div class="bubble">Let's schedule a meeting for Monday. <span class="vi-translation">Hãy lên lịch họp vào thứ Hai.</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('Let\'s schedule a meeting')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('Let\'s schedule a meeting')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">Could you send me</div>
+            <div class="pron">/kʊd juː send miː/</div>
+            <div class="muted">Bạn có thể gửi cho tôi</div>
+            <div class="bubble">Could you send me the report? <span class="vi-translation">Bạn có thể gửi cho tôi báo cáo được không?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('Could you send me')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('Could you send me')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">What's the deadline?</div>
+            <div class="pron">/wɒts ðə ˈdedlaɪn/</div>
+            <div class="muted">Hạn chót là khi nào?</div>
+            <div class="bubble">What's the deadline for this project? <span class="vi-translation">Hạn chót cho dự án này là khi nào?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('What\'s the deadline?')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('What\'s the deadline?')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">Conversation Practice (10 Dialogues)</div>
+
+        <!-- Conversation 1 -->
+        <div class="conv">
+          <div class="title">1. Business Meeting Introduction</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Let's start the meeting. I'm responsible for this project.
+              <span class="vi-translation">Hãy bắt đầu cuộc họp. Tôi chịu trách nhiệm cho dự án này.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Could you send me the latest report?
+              <span class="vi-translation">Bạn có thể gửi cho tôi báo cáo mới nhất được không?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Let\'s start the meeting. I\'m responsible for this project. Could you send me the latest report?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Let\'s start the meeting. I\'m responsible for this project.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 2 -->
+        <div class="conv">
+          <div class="title">2. Scheduling a Meeting</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Let's schedule a meeting to discuss the new project.
+              <span class="vi-translation">Hãy lên lịch họp để thảo luận về dự án mới.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>How about Tuesday at 10 AM? Does that work for you?
+              <span class="vi-translation">Thứ Ba lúc 10 giờ sáng thì sao? Có phù hợp với bạn không?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Let\'s schedule a meeting to discuss the new project. How about Tuesday at 10 AM? Does that work for you?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Let\'s schedule a meeting to discuss the new project.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 3 -->
+        <div class="conv">
+          <div class="title">3. Asking for Information</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Could you send me the sales figures from last quarter?
+              <span class="vi-translation">Bạn có thể gửi cho tôi số liệu bán hàng từ quý trước được không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Certainly. I'll email them to you this afternoon.
+              <span class="vi-translation">Chắc chắn rồi. Tôi sẽ gửi email cho bạn chiều nay.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Could you send me the sales figures from last quarter? Certainly. I\'ll email them to you this afternoon.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Could you send me the sales figures from last quarter?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 4 -->
+        <div class="conv">
+          <div class="title">4. Discussing Deadlines</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>What's the deadline for this project?
+              <span class="vi-translation">Hạn chót cho dự án này là khi nào?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>The deadline is next Friday. We need to finish by then.
+              <span class="vi-translation">Hạn chót là thứ Sáu tuần sau. Chúng ta cần hoàn thành trước đó.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('What\'s the deadline for this project? The deadline is next Friday. We need to finish by then.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('What\'s the deadline for this project?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 5 -->
+        <div class="conv">
+          <div class="title">5. Making a Presentation</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>I'd like to present our new marketing strategy.
+              <span class="vi-translation">Tôi muốn trình bày chiến lược marketing mới của chúng ta.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Please go ahead. We're all listening.
+              <span class="vi-translation">Xin mời. Tất cả chúng tôi đang lắng nghe.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('I\'d like to present our new marketing strategy. Please go ahead. We\'re all listening.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('I\'d like to present our new marketing strategy.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 6 -->
+        <div class="conv">
+          <div class="title">6. Business Negotiation</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>We'd like to discuss the terms of our agreement.
+              <span class="vi-translation">Chúng tôi muốn thảo luận về các điều khoản trong thỏa thuận.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Of course. What specific terms would you like to review?
+              <span class="vi-translation">Tất nhiên. Bạn muốn xem xét điều khoản cụ thể nào?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('We\'d like to discuss the terms of our agreement. Of course. What specific terms would you like to review?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('We\'d like to discuss the terms of our agreement.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 7 -->
+        <div class="conv">
+          <div class="title">7. Team Collaboration</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Let's work together on this project.
+              <span class="vi-translation">Hãy cùng nhau làm việc trên dự án này.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>That's a great idea. We can share resources and ideas.
+              <span class="vi-translation">Đó là ý tưởng tuyệt vời. Chúng ta có thể chia sẻ tài nguyên và ý tưởng.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Let\'s work together on this project. That\'s a great idea. We can share resources and ideas.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Let\'s work together on this project.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 8 -->
+        <div class="conv">
+          <div class="title">8. Client Meeting</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Thank you for meeting with us today.
+              <span class="vi-translation">Cảm ơn bạn đã gặp chúng tôi hôm nay.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>It's our pleasure. We're excited about this partnership.
+              <span class="vi-translation">Đó là niềm vinh hạnh của chúng tôi. Chúng tôi rất hào hứng về sự hợp tác này.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Thank you for meeting with us today. It\'s our pleasure. We\'re excited about this partnership.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Thank you for meeting with us today.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 9 -->
+        <div class="conv">
+          <div class="title">9. Problem Solving</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>We need to find a solution to this problem.
+              <span class="vi-translation">Chúng ta cần tìm giải pháp cho vấn đề này.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Let's brainstorm some ideas together.
+              <span class="vi-translation">Hãy cùng nhau động não một số ý tưởng.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('We need to find a solution to this problem. Let\'s brainstorm some ideas together.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('We need to find a solution to this problem.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 10 -->
+        <div class="conv">
+          <div class="title">10. Follow-up Email</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>I'll send you a follow-up email with all the details.
+              <span class="vi-translation">Tôi sẽ gửi cho bạn email theo dõi với tất cả chi tiết.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Thank you. I look forward to receiving it.
+              <span class="vi-translation">Cảm ơn. Tôi mong chờ nhận được nó.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('I\'ll send you a follow-up email with all the details. Thank you. I look forward to receiving it.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('I\'ll send you a follow-up email with all the details.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Practice Questions for Lesson 5 -->
+        <div class="practice-section">
+          <div class="practice-title">Practice Questions - Lesson 5</div>
+          
+          <div class="quiz">
+            <div class="q">1. How do you say "Tôi chịu trách nhiệm về" in English?</div>
+            <div class="opt" onclick="selectOption(this)">A. I work for</div>
+            <div class="opt" onclick="selectOption(this)">B. I'm responsible for</div>
+            <div class="opt" onclick="selectOption(this)">C. I like</div>
+            <div class="opt" onclick="selectOption(this)">D. I know about</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">2. What does "Let's schedule a meeting" mean?</div>
+            <div class="opt" onclick="selectOption(this)">A. Hãy hủy cuộc họp</div>
+            <div class="opt" onclick="selectOption(this)">B. Hãy kết thúc cuộc họp</div>
+            <div class="opt" onclick="selectOption(this)">C. Hãy lên lịch họp</div>
+            <div class="opt" onclick="selectOption(this)">D. Hãy bắt đầu cuộc họp</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">3. How do you ask for a document politely?</div>
+            <div class="opt" onclick="selectOption(this)">A. Give me the report</div>
+            <div class="opt" onclick="selectOption(this)">B. I want the report</div>
+            <div class="opt" onclick="selectOption(this)">C. Could you send me the report?</div>
+            <div class="opt" onclick="selectOption(this)">D. Where is the report?</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">4. Translate: "Hạn chót là khi nào?"</div>
+            <div class="opt" onclick="selectOption(this)">A. What's the time?</div>
+            <div class="opt" onclick="selectOption(this)">B. What's the deadline?</div>
+            <div class="opt" onclick="selectOption(this)">C. When is the meeting?</div>
+            <div class="opt" onclick="selectOption(this)">D. Where is the office?</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">5. What is a professional way to start a meeting?</div>
+            <div class="opt" onclick="selectOption(this)">A. Let's start the meeting</div>
+            <div class="opt" onclick="selectOption(this)">B. I'm hungry</div>
+            <div class="opt" onclick="selectOption(this)">C. When can we leave?</div>
+            <div class="opt" onclick="selectOption(this)">D. This is boring</div>
+          </div>
+
+          <button class="btn success" onclick="checkAnswers(5)" style="margin-top: 15px;">
+            <i class="fa-solid fa-check"></i> Check Answers
+          </button>
+          <div id="result5" style="margin-top: 10px; font-weight: bold;"></div>
+        </div>
+
+        <div class="actions">
+          <button class="btn secondary" onclick="showLesson('lesson4')"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+          <button class="btn primary" onclick="completeLesson(5)">Complete Lesson <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </section>
+
+      <!-- Lesson 6: Shopping & Retail -->
+      <section id="lesson6" class="lesson" data-num="6">
+        <h2>Lesson 6: Shopping & Retail</h2>
+        <div class="meta"><span><i class="fa-regular fa-clock"></i> 40–50 min</span><span><i class="fa-solid fa-signal"></i> Beginner</span></div>
+        <div class="objective"><strong>Objectives:</strong> Learn shopping vocabulary and how to communicate in stores.</div>
+        
+        <div class="section-title">Essential Phrases with Vietnamese Translation</div>
+        <div class="vgrid">
+          <div class="vcard">
+            <div class="word">How much is this?</div>
+            <div class="pron">/haʊ mʌtʃ ɪz ðɪs/</div>
+            <div class="muted">Cái này giá bao nhiêu?</div>
+            <div class="bubble">How much is this shirt? <span class="vi-translation">Cái áo này giá bao nhiêu?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('How much is this?')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('How much is this?')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">Do you have this in size M?</div>
+            <div class="pron">/duː juː hæv ðɪs ɪn saɪz ɛm/</div>
+            <div class="muted">Bạn có cái này cỡ M không?</div>
+            <div class="bubble">Do you have this in size M? <span class="vi-translation">Bạn có cái này cỡ M không?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('Do you have this in size M?')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('Do you have this in size M?')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">Can I try this on?</div>
+            <div class="pron">/kæn aɪ traɪ ðɪs ɒn/</div>
+            <div class="muted">Tôi có thể thử cái này không?</div>
+            <div class="bubble">Can I try this on? <span class="vi-translation">Tôi có thể thử cái này không?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('Can I try this on?')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('Can I try this on?')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">Where is the fitting room?</div>
+            <div class="pron">/weər ɪz ðə ˈfɪtɪŋ ruːm/</div>
+            <div class="muted">Phòng thử đồ ở đâu?</div>
+            <div class="bubble">Where is the fitting room? <span class="vi-translation">Phòng thử đồ ở đâu?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('Where is the fitting room?')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('Where is the fitting room?')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">Conversation Practice (10 Dialogues)</div>
+
+        <!-- Conversation 1 -->
+        <div class="conv">
+          <div class="title">1. Asking About Price</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>How much is this dress?
+              <span class="vi-translation">Cái váy này giá bao nhiêu?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>It's 450,000 VND. It's on sale this week.
+              <span class="vi-translation">Giá 450,000 đồng. Tuần này đang giảm giá.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('How much is this dress? It\'s 450,000 VND. It\'s on sale this week.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('How much is this dress?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 2 -->
+        <div class="conv">
+          <div class="title">2. Looking for a Size</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Do you have this in a larger size?
+              <span class="vi-translation">Bạn có cái này cỡ lớn hơn không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Yes, we have it in large and extra large.
+              <span class="vi-translation">Có, chúng tôi có cỡ L và XL.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Do you have this in a larger size? Yes, we have it in large and extra large.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Do you have this in a larger size?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 3 -->
+        <div class="conv">
+          <div class="title">3. Trying On Clothes</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Can I try these pants on?
+              <span class="vi-translation">Tôi có thể thử cái quần này không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Of course. The fitting room is over there.
+              <span class="vi-translation">Tất nhiên rồi. Phòng thử đồ ở đằng kia.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Can I try these pants on? Of course. The fitting room is over there.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Can I try these pants on?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 4 -->
+        <div class="conv">
+          <div class="title">4. Asking About Discounts</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Is there any discount on this item?
+              <span class="vi-translation">Món hàng này có được giảm giá không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Yes, it's 20% off this week.
+              <span class="vi-translation">Có, tuần này giảm 20%.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Is there any discount on this item? Yes, it\'s 20% off this week.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Is there any discount on this item?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 5 -->
+        <div class="conv">
+          <div class="title">5. Payment Options</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Do you accept credit cards?
+              <span class="vi-translation">Bạn có nhận thẻ tín dụng không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Yes, we accept all major credit cards.
+              <span class="vi-translation">Có, chúng tôi nhận tất cả các loại thẻ tín dụng chính.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Do you accept credit cards? Yes, we accept all major credit cards.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Do you accept credit cards?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 6 -->
+        <div class="conv">
+          <div class="title">6. Returning an Item</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>I'd like to return this shirt. It doesn't fit.
+              <span class="vi-translation">Tôi muốn trả lại cái áo này. Nó không vừa.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Do you have the receipt?
+              <span class="vi-translation">Bạn có mang hóa đơn không?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('I\'d like to return this shirt. It doesn\'t fit. Do you have the receipt?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('I\'d like to return this shirt. It doesn\'t fit.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 7 -->
+        <div class="conv">
+          <div class="title">7. Looking for Specific Item</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>I'm looking for a black leather jacket.
+              <span class="vi-translation">Tôi đang tìm một chiếc áo khoác da màu đen.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>We have several options. Let me show you.
+              <span class="vi-translation">Chúng tôi có vài lựa chọn. Để tôi chỉ cho bạn.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('I\'m looking for a black leather jacket. We have several options. Let me show you.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('I\'m looking for a black leather jacket.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 8 -->
+        <div class="conv">
+          <div class="title">8. Asking for Different Color</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Do you have this in blue?
+              <span class="vi-translation">Bạn có cái này màu xanh không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Yes, we have it in navy blue and light blue.
+              <span class="vi-translation">Có, chúng tôi có màu xanh navy và xanh nhạt.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Do you have this in blue? Yes, we have it in navy blue and light blue.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Do you have this in blue?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 9 -->
+        <div class="conv">
+          <div class="title">9. Gift Wrapping</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Can you gift wrap this for me?
+              <span class="vi-translation">Bạn có thể gói quà giúp tôi không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Of course. There's no extra charge for gift wrapping.
+              <span class="vi-translation">Tất nhiên rồi. Không tính phí thêm cho gói quà.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Can you gift wrap this for me? Of course. There\'s no extra charge for gift wrapping.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Can you gift wrap this for me?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 10 -->
+        <div class="conv">
+          <div class="title">10. Finalizing Purchase</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>I'll take this one. How much is the total?
+              <span class="vi-translation">Tôi sẽ lấy cái này. Tổng cộng bao nhiêu tiền?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>That will be 750,000 VND. Cash or card?
+              <span class="vi-translation">Tổng cộng là 750,000 đồng. Tiền mặt hay thẻ?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('I\'ll take this one. How much is the total? That will be 750,000 VND. Cash or card?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('I\'ll take this one. How much is the total?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Practice Questions Section -->
+        <div class="practice-section">
+          <div class="practice-title">Practice Questions - Lesson 6</div>
+          
+          <div class="quiz">
+            <div class="q">1. How do you ask "Cái này giá bao nhiêu?" in English?</div>
+            <div class="opt" onclick="selectOption(this)">A. What is this?</div>
+            <div class="opt" onclick="selectOption(this)">B. How much is this?</div>
+            <div class="opt" onclick="selectOption(this)">C. Where is this?</div>
+            <div class="opt" onclick="selectOption(this)">D. When is this?</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">2. What does "Can I try this on?" mean in Vietnamese?</div>
+            <div class="opt" onclick="selectOption(this)">A. Tôi có thể mua cái này không?</div>
+            <div class="opt" onclick="selectOption(this)">B. Tôi có thể thử cái này không?</div>
+            <div class="opt" onclick="selectOption(this)">C. Tôi có thể trả lại cái này không?</div>
+            <div class="opt" onclick="selectOption(this)">D. Tôi có thể giảm giá không?</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">3. How do you ask for a different size?</div>
+            <div class="opt" onclick="selectOption(this)">A. Do you have another color?</div>
+            <div class="opt" onclick="selectOption(this)">B. Do you have this in size M?</div>
+            <div class="opt" onclick="selectOption(this)">C. Where is the bathroom?</div>
+            <div class="opt" onclick="selectOption(this)">D. How much does it cost?</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">4. Translate: "Phòng thử đồ ở đâu?"</div>
+            <div class="opt" onclick="selectOption(this)">A. Where is the bathroom?</div>
+            <div class="opt" onclick="selectOption(this)">B. Where is the exit?</div>
+            <div class="opt" onclick="selectOption(this)">C. Where is the fitting room?</div>
+            <div class="opt" onclick="selectOption(this)">D. Where is the cashier?</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">5. What is a polite way to ask about discounts?</div>
+            <div class="opt" onclick="selectOption(this)">A. Give me discount!</div>
+            <div class="opt" onclick="selectOption(this)">B. Is this on sale?</div>
+            <div class="opt" onclick="selectOption(this)">C. I want cheaper price.</div>
+            <div class="opt" onclick="selectOption(this)">D. This is too expensive.</div>
+          </div>
+
+          <button class="btn success" onclick="checkAnswers(6)" style="margin-top: 15px;">
+            <i class="fa-solid fa-check"></i> Check Answers
+          </button>
+          <div id="result6" style="margin-top: 10px; font-weight: bold;"></div>
+        </div>
+
+        <div class="actions">
+          <button class="btn secondary" onclick="showLesson('lesson5')"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+          <button class="btn primary" onclick="completeLesson(6)">Complete Lesson <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </section>
+
+      <!-- Lesson 7: Health & Wellness -->
+      <section id="lesson7" class="lesson" data-num="7">
+        <h2>Lesson 7: Health & Wellness</h2>
+        <div class="meta"><span><i class="fa-regular fa-clock"></i> 40–50 min</span><span><i class="fa-solid fa-signal"></i> Beginner</span></div>
+        <div class="objective"><strong>Objectives:</strong> Learn vocabulary for health issues and doctor visits.</div>
+        
+        <div class="section-title">Essential Phrases with Vietnamese Translation</div>
+        <div class="vgrid">
+          <div class="vcard">
+            <div class="word">I don't feel well</div>
+            <div class="pron">/aɪ doʊnt fiːl wɛl/</div>
+            <div class="muted">Tôi cảm thấy không khỏe</div>
+            <div class="bubble">I don't feel well today. <span class="vi-translation">Hôm nay tôi cảm thấy không khỏe.</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('I don\'t feel well')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('I don\'t feel well')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">I have a headache</div>
+            <div class="pron">/aɪ hæv ə ˈhɛdeɪk/</div>
+            <div class="muted">Tôi bị đau đầu</div>
+            <div class="bubble">I have a headache and fever. <span class="vi-translation">Tôi bị đau đầu và sốt.</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('I have a headache')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('I have a headache')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">Where is the pharmacy?</div>
+            <div class="pron">/weər ɪz ðə ˈfɑːrməsi/</div>
+            <div class="muted">Hiệu thuốc ở đâu?</div>
+            <div class="bubble">Where is the nearest pharmacy? <span class="vi-translation">Hiệu thuốc gần nhất ở đâu?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('Where is the pharmacy?')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('Where is the pharmacy?')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">I need to see a doctor</div>
+            <div class="pron">/aɪ niːd tə siː ə ˈdɒktə/</div>
+            <div class="muted">Tôi cần gặp bác sĩ</div>
+            <div class="bubble">I need to see a doctor immediately. <span class="vi-translation">Tôi cần gặp bác sĩ ngay lập tức.</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('I need to see a doctor')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('I need to see a doctor')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">Conversation Practice (10 Dialogues)</div>
+
+        <!-- Conversation 1 -->
+        <div class="conv">
+          <div class="title">1. At the Doctor's Office</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>What seems to be the problem?
+              <span class="vi-translation">Có vấn đề gì vậy?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>I have a sore throat and I'm coughing a lot.
+              <span class="vi-translation">Tôi bị đau họng và ho nhiều.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('What seems to be the problem? I have a sore throat and I\'m coughing a lot.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('What seems to be the problem?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 2 -->
+        <div class="conv">
+          <div class="title">2. At the Pharmacy</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>I need something for a headache.
+              <span class="vi-translation">Tôi cần thuốc cho đau đầu.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>We have ibuprofen or paracetamol. Which would you prefer?
+              <span class="vi-translation">Chúng tôi có ibuprofen hoặc paracetamol. Bạn muốn loại nào?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('I need something for a headache. We have ibuprofen or paracetamol. Which would you prefer?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('I need something for a headache.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 3 -->
+        <div class="conv">
+          <div class="title">3. Making a Doctor's Appointment</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>I'd like to make an appointment with Dr. Smith.
+              <span class="vi-translation">Tôi muốn đặt lịch hẹn với Bác sĩ Smith.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>What day works best for you?
+              <span class="vi-translation">Ngày nào thuận tiện cho bạn?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('I\'d like to make an appointment with Dr. Smith. What day works best for you?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('I\'d like to make an appointment with Dr. Smith.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 4 -->
+        <div class="conv">
+          <div class="title">4. Describing Symptoms</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>I've been feeling dizzy and nauseous.
+              <span class="vi-translation">Tôi cảm thấy chóng mặt và buồn nôn.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>How long have you had these symptoms?
+              <span class="vi-translation">Bạn có những triệu chứng này bao lâu rồi?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('I\'ve been feeling dizzy and nauseous. How long have you had these symptoms?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('I\'ve been feeling dizzy and nauseous.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 5 -->
+        <div class="conv">
+          <div class="title">5. At the Emergency Room</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>I think I broke my arm. It hurts a lot.
+              <span class="vi-translation">Tôi nghĩ tôi bị gãy tay. Nó đau lắm.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Please sit down. A doctor will see you right away.
+              <span class="vi-translation">Xin mời ngồi xuống. Bác sĩ sẽ khám cho bạn ngay.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('I think I broke my arm. It hurts a lot. Please sit down. A doctor will see you right away.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('I think I broke my arm. It hurts a lot.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 6 -->
+        <div class="conv">
+          <div class="title">6. Getting a Prescription</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>You need to take this medicine twice a day.
+              <span class="vi-translation">Bạn cần uống thuốc này hai lần một ngày.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Should I take it with food?
+              <span class="vi-translation">Tôi có nên uống thuốc với thức ăn không?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('You need to take this medicine twice a day. Should I take it with food?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('You need to take this medicine twice a day.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 7 -->
+        <div class="conv">
+          <div class="title">7. Health Insurance</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Do you have health insurance?
+              <span class="vi-translation">Bạn có bảo hiểm y tế không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Yes, here's my insurance card.
+              <span class="vi-translation">Có, đây là thẻ bảo hiểm của tôi.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Do you have health insurance? Yes, here\'s my insurance card.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Do you have health insurance?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 8 -->
+        <div class="conv">
+          <div class="title">8. Follow-up Appointment</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>You should come back for a check-up in two weeks.
+              <span class="vi-translation">Bạn nên quay lại để kiểm tra sau hai tuần.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>I'll make an appointment before I leave.
+              <span class="vi-translation">Tôi sẽ đặt lịch hẹn trước khi rời đi.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('You should come back for a check-up in two weeks. I\'ll make an appointment before I leave.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('You should come back for a check-up in two weeks.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 9 -->
+        <div class="conv">
+          <div class="title">9. Allergies</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Are you allergic to any medications?
+              <span class="vi-translation">Bạn có dị ứng với loại thuốc nào không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Yes, I'm allergic to penicillin.
+              <span class="vi-translation">Có, tôi dị ứng với penicillin.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Are you allergic to any medications? Yes, I\'m allergic to penicillin.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Are you allergic to any medications?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 10 -->
+        <div class="conv">
+          <div class="title">10. Dental Appointment</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>I have a toothache. Can I see a dentist today?
+              <span class="vi-translation">Tôi bị đau răng. Tôi có thể gặp nha sĩ hôm nay không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>We have an opening at 3 PM. Does that work for you?
+              <span class="vi-translation">Chúng tôi có lịch trống lúc 3 giờ chiều. Có phù hợp với bạn không?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('I have a toothache. Can I see a dentist today? We have an opening at 3 PM. Does that work for you?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('I have a toothache. Can I see a dentist today?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Practice Questions Section -->
+        <div class="practice-section">
+          <div class="practice-title">Practice Questions - Lesson 7</div>
+          
+          <div class="quiz">
+            <div class="q">1. How do you say "Tôi cảm thấy không khỏe" in English?</div>
+            <div class="opt" onclick="selectOption(this)">A. I feel great</div>
+            <div class="opt" onclick="selectOption(this)">B. I don't feel well</div>
+            <div class="opt" onclick="selectOption(this)">C. I'm hungry</div>
+            <div class="opt" onclick="selectOption(this)">D. I'm tired</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">2. What does "I have a headache" mean?</div>
+            <div class="opt" onclick="selectOption(this)">A. Tôi bị đau bụng</div>
+            <div class="opt" onclick="selectOption(this)">B. Tôi bị đau đầu</div>
+            <div class="opt" onclick="selectOption(this)">C. Tôi bị đau chân</div>
+            <div class="opt" onclick="selectOption(this)">D. Tôi bị đau lưng</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">3. How do you ask for a pharmacy?</div>
+            <div class="opt" onclick="selectOption(this)">A. Where is the hospital?</div>
+            <div class="opt" onclick="selectOption(this)">B. Where is the doctor?</div>
+            <div class="opt" onclick="selectOption(this)">C. Where is the pharmacy?</div>
+            <div class="opt" onclick="selectOption(this)">D. Where is the restaurant?</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">4. Translate: "Tôi cần gặp bác sĩ"</div>
+            <div class="opt" onclick="selectOption(this)">A. I need to see a dentist</div>
+            <div class="opt" onclick="selectOption(this)">B. I need to see a doctor</div>
+            <div class="opt" onclick="selectOption(this)">C. I need to see a nurse</div>
+            <div class="opt" onclick="selectOption(this)">D. I need to see a friend</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">5. What is a common symptom of a cold?</div>
+            <div class="opt" onclick="selectOption(this)">A. Broken arm</div>
+            <div class="opt" onclick="selectOption(this)">B. Cough and sore throat</div>
+            <div class="opt" onclick="selectOption(this)">C. Broken leg</div>
+            <div class="opt" onclick="selectOption(this)">D. Cut finger</div>
+          </div>
+
+          <button class="btn success" onclick="checkAnswers(7)" style="margin-top: 15px;">
+            <i class="fa-solid fa-check"></i> Check Answers
+          </button>
+          <div id="result7" style="margin-top: 10px; font-weight: bold;"></div>
+        </div>
+
+        <div class="actions">
+          <button class="btn secondary" onclick="showLesson('lesson6')"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+          <button class="btn primary" onclick="completeLesson(7)">Complete Lesson <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </section>
+
+      <!-- Lesson 8: Family & Relationships -->
+      <section id="lesson8" class="lesson" data-num="8">
+        <h2>Lesson 8: Family & Relationships</h2>
+        <div class="meta"><span><i class="fa-regular fa-clock"></i> 40–50 min</span><span><i class="fa-solid fa-signal"></i> Beginner</span></div>
+        <div class="objective"><strong>Objectives:</strong> Learn vocabulary for family members and relationships.</div>
+        
+        <div class="section-title">Essential Phrases with Vietnamese Translation</div>
+        <div class="vgrid">
+          <div class="vcard">
+            <div class="word">This is my family</div>
+            <div class="pron">/ðɪs ɪz maɪ ˈfæməli/</div>
+            <div class="muted">Đây là gia đình tôi</div>
+            <div class="bubble">This is my family photo. <span class="vi-translation">Đây là ảnh gia đình tôi.</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('This is my family')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('This is my family')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">How many siblings do you have?</div>
+            <div class="pron">/haʊ ˈmɛni ˈsɪblɪŋz duː juː hæv/</div>
+            <div class="muted">Bạn có bao nhiêu anh chị em?</div>
+            <div class="bubble">How many siblings do you have? <span class="vi-translation">Bạn có bao nhiêu anh chị em?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('How many siblings do you have?')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('How many siblings do you have?')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">I have two brothers</div>
+            <div class="pron">/aɪ hæv tuː ˈbrʌðərz/</div>
+            <div class="muted">Tôi có hai anh/em trai</div>
+            <div class="bubble">I have two brothers and one sister. <span class="vi-translation">Tôi có hai anh trai và một chị gái.</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('I have two brothers')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('I have two brothers')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">Are you married?</div>
+            <div class="pron">/ɑːr juː ˈmærid/</div>
+            <div class="muted">Bạn đã kết hôn chưa?</div>
+            <div class="bubble">Are you married or single? <span class="vi-translation">Bạn đã kết hôn hay còn độc thân?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('Are you married?')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('Are you married?')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">Conversation Practice (10 Dialogues)</div>
+
+        <!-- Conversation 1 -->
+        <div class="conv">
+          <div class="title">1. Talking About Family</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Do you have a big family?
+              <span class="vi-translation">Bạn có gia đình đông không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Yes, I have three brothers and two sisters.
+              <span class="vi-translation">Có, tôi có ba anh em trai và hai chị em gái.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Do you have a big family? Yes, I have three brothers and two sisters.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Do you have a big family?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 2 -->
+        <div class="conv">
+          <div class="title">2. Asking About Marital Status</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Are you married?
+              <span class="vi-translation">Bạn đã kết hôn chưa?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>No, I'm single. How about you?
+              <span class="vi-translation">Không, tôi còn độc thân. Còn bạn thì sao?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Are you married? No, I\'m single. How about you?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Are you married?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 3 -->
+        <div class="conv">
+          <div class="title">3. Describing Family Members</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>What does your father do?
+              <span class="vi-translation">Cha bạn làm nghề gì?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>He's a teacher. He teaches mathematics.
+              <span class="vi-translation">Ông ấy là giáo viên. Ông dạy toán.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('What does your father do? He\'s a teacher. He teaches mathematics.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('What does your father do?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 4 -->
+        <div class="conv">
+          <div class="title">4. Talking About Children</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Do you have any children?
+              <span class="vi-translation">Bạn có con không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Yes, I have a daughter and a son.
+              <span class="vi-translation">Có, tôi có một con gái và một con trai.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Do you have any children? Yes, I have a daughter and a son.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Do you have any children?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 5 -->
+        <div class="conv">
+          <div class="title">5. Family Activities</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>What do you like to do with your family?
+              <span class="vi-translation">Bạn thích làm gì với gia đình?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>We enjoy cooking together and watching movies.
+              <span class="vi-translation">Chúng tôi thích nấu ăn cùng nhau và xem phim.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('What do you like to do with your family? We enjoy cooking together and watching movies.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('What do you like to do with your family?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 6 -->
+        <div class="conv">
+          <div class="title">6. Family Traditions</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>What are your family traditions for Tet holiday?
+              <span class="vi-translation">Truyền thống gia đình bạn cho Tết là gì?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>We always have a big family dinner and give lucky money.
+              <span class="vi-translation">Chúng tôi luôn có bữa tối gia đình lớn và lì xì.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('What are your family traditions for Tet holiday? We always have a big family dinner and give lucky money.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('What are your family traditions for Tet holiday?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 7 -->
+        <div class="conv">
+          <div class="title">7. Extended Family</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Do you have many relatives in Vietnam?
+              <span class="vi-translation">Bạn có nhiều họ hàng ở Việt Nam không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Yes, most of my extended family lives here.
+              <span class="vi-translation">Có, hầu hết họ hàng của tôi sống ở đây.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Do you have many relatives in Vietnam? Yes, most of my extended family lives here.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Do you have many relatives in Vietnam?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 8 -->
+        <div class="conv">
+          <div class="title">8. Family Photos</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>This is a photo from my sister's wedding.
+              <span class="vi-translation">Đây là ảnh từ đám cưới của chị tôi.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>What a beautiful family! Everyone looks so happy.
+              <span class="vi-translation">Gia đình thật đẹp! Mọi người trông thật hạnh phúc.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('This is a photo from my sister\'s wedding. What a beautiful family! Everyone looks so happy.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('This is a photo from my sister\'s wedding.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 9 -->
+        <div class="conv">
+          <div class="title">9. Family Support</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>My family always supports me in everything I do.
+              <span class="vi-translation">Gia đình tôi luôn ủng hộ tôi trong mọi việc tôi làm.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>That's wonderful. Family support is so important.
+              <span class="vi-translation">Thật tuyệt vời. Sự ủng hộ gia đình rất quan trọng.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('My family always supports me in everything I do. That\'s wonderful. Family support is so important.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('My family always supports me in everything I do.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 10 -->
+        <div class="conv">
+          <div class="title">10. Future Family Plans</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Do you want to have children in the future?
+              <span class="vi-translation">Bạn có muốn có con trong tương lai không?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Yes, I'd like to have two children someday.
+              <span class="vi-translation">Có, tôi muốn có hai con vào một ngày nào đó.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Do you want to have children in the future? Yes, I\'d like to have two children someday.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Do you want to have children in the future?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Practice Questions Section -->
+        <div class="practice-section">
+          <div class="practice-title">Practice Questions - Lesson 8</div>
+          
+          <div class="quiz">
+            <div class="q">1. How do you say "Đây là gia đình tôi" in English?</div>
+            <div class="opt" onclick="selectOption(this)">A. This is my friend</div>
+            <div class="opt" onclick="selectOption(this)">B. This is my family</div>
+            <div class="opt" onclick="selectOption(this)">C. This is my house</div>
+            <div class="opt" onclick="selectOption(this)">D. This is my country</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">2. What does "How many siblings do you have?" mean?</div>
+            <div class="opt" onclick="selectOption(this)">A. Bạn có bao nhiêu con?</div>
+            <div class="opt" onclick="selectOption(this)">B. Bạn có bao nhiêu anh chị em?</div>
+            <div class="opt" onclick="selectOption(this)">C. Bạn có bao nhiêu bạn bè?</div>
+            <div class="opt" onclick="selectOption(this)">D. Bạn có bao nhiêu tuổi?</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">3. How do you say "Tôi có hai anh trai" in English?</div>
+            <div class="opt" onclick="selectOption(this)">A. I have two sisters</div>
+            <div class="opt" onclick="selectOption(this)">B. I have two brothers</div>
+            <div class="opt" onclick="selectOption(this)">C. I have two parents</div>
+            <div class="opt" onclick="selectOption(this)">D. I have two children</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">4. Translate: "Bạn đã kết hôn chưa?"</div>
+            <div class="opt" onclick="selectOption(this)">A. Are you happy?</div>
+            <div class="opt" onclick="selectOption(this)">B. Are you married?</div>
+            <div class="opt" onclick="selectOption(this)">C. Are you single?</div>
+            <div class="opt" onclick="selectOption(this)">D. Are you working?</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">5. What is the English word for "chị gái"?</div>
+            <div class="opt" onclick="selectOption(this)">A. Brother</div>
+            <div class="opt" onclick="selectOption(this)">B. Sister</div>
+            <div class="opt" onclick="selectOption(this)">C. Mother</div>
+            <div class="opt" onclick="selectOption(this)">D. Father</div>
+          </div>
+
+          <button class="btn success" onclick="checkAnswers(8)" style="margin-top: 15px;">
+            <i class="fa-solid fa-check"></i> Check Answers
+          </button>
+          <div id="result8" style="margin-top: 10px; font-weight: bold;"></div>
+        </div>
+
+        <div class="actions">
+          <button class="btn secondary" onclick="showLesson('lesson7')"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+          <button class="btn primary" onclick="completeLesson(8)">Complete Lesson <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </section>
+
+      <!-- Lesson 9: Weather & Seasons -->
+      <section id="lesson9" class="lesson" data-num="9">
+        <h2>Lesson 9: Weather & Seasons</h2>
+        <div class="meta"><span><i class="fa-regular fa-clock"></i> 40–50 min</span><span><i class="fa-solid fa-signal"></i> Beginner</span></div>
+        <div class="objective"><strong>Objectives:</strong> Learn vocabulary for weather conditions and seasons.</div>
+        
+        <div class="section-title">Essential Phrases with Vietnamese Translation</div>
+        <div class="vgrid">
+          <div class="vcard">
+            <div class="word">What's the weather like?</div>
+            <div class="pron">/wɒts ðə ˈweðər laɪk/</div>
+            <div class="muted">Thời tiết thế nào?</div>
+            <div class="bubble">What's the weather like today? <span class="vi-translation">Thời tiết hôm nay thế nào?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('What\'s the weather like?')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('What\'s the weather like?')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">It's sunny today</div>
+            <div class="pron">/ɪts ˈsʌni təˈdeɪ/</div>
+            <div class="muted">Hôm nay trời nắng</div>
+            <div class="bubble">It's sunny today, perfect for the beach. <span class="vi-translation">Hôm nay trời nắng, hoàn hảo để đi biển.</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('It\'s sunny today')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('It\'s sunny today')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">It's raining</div>
+            <div class="pron">/ɪts ˈreɪnɪŋ/</div>
+            <div class="muted">Trời đang mưa</div>
+            <div class="bubble">It's raining, don't forget your umbrella. <span class="vi-translation">Trời đang mưa, đừng quên mang ô.</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('It\'s raining')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('It\'s raining')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">What's the temperature?</div>
+            <div class="pron">/wɒts ðə ˈtɛmprətʃər/</div>
+            <div class="muted">Nhiệt độ là bao nhiêu?</div>
+            <div class="bubble">What's the temperature outside? <span class="vi-translation">Nhiệt độ bên ngoài là bao nhiêu?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('What\'s the temperature?')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('What\'s the temperature?')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">Conversation Practice (10 Dialogues)</div>
+
+        <!-- Conversation 1 -->
+        <div class="conv">
+          <div class="title">1. Discussing the Weather</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>What's the weather like today?
+              <span class="vi-translation">Thời tiết hôm nay thế nào?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>It's sunny and warm. A beautiful day!
+              <span class="vi-translation">Trời nắng và ấm áp. Một ngày đẹp trời!</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('What\'s the weather like today? It\'s sunny and warm. A beautiful day!')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('What\'s the weather like today?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 2 -->
+        <div class="conv">
+          <div class="title">2. Rainy Day Conversation</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>It's raining heavily outside.
+              <span class="vi-translation">Bên ngoài trời đang mưa to.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Yes, I think we should stay indoors today.
+              <span class="vi-translation">Đúng vậy, tôi nghĩ chúng ta nên ở trong nhà hôm nay.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('It\'s raining heavily outside. Yes, I think we should stay indoors today.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('It\'s raining heavily outside.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 3 -->
+        <div class="conv">
+          <div class="title">3. Planning Based on Weather</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>What's the forecast for tomorrow?
+              <span class="vi-translation">Dự báo thời tiết ngày mai thế nào?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>It's supposed to be cloudy with a chance of rain.
+              <span class="vi-translation">Trời được dự báo là nhiều mây và có thể có mưa.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('What\'s the forecast for tomorrow? It\'s supposed to be cloudy with a chance of rain.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('What\'s the forecast for tomorrow?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 4 -->
+        <div class="conv">
+          <div class="title">4. Hot Weather</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>It's so hot today! I can't stand this heat.
+              <span class="vi-translation">Hôm nay nóng quá! Tôi không chịu nổi cái nóng này.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Me neither. Let's go somewhere with air conditioning.
+              <span class="vi-translation">Tôi cũng vậy. Hãy đi đâu đó có máy lạnh.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('It\'s so hot today! I can\'t stand this heat. Me neither. Let\'s go somewhere with air conditioning.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('It\'s so hot today! I can\'t stand this heat.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 5 -->
+        <div class="conv">
+          <div class="title">5. Cold Weather</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>It's freezing outside! Don't forget your coat.
+              <span class="vi-translation">Bên ngoài lạnh cóng! Đừng quên áo khoác.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Thanks for reminding me. I almost forgot.
+              <span class="vi-translation">Cảm ơn đã nhắc tôi. Tôi suýt quên.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('It\'s freezing outside! Don\'t forget your coat. Thanks for reminding me. I almost forgot.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('It\'s freezing outside! Don\'t forget your coat.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 6 -->
+        <div class="conv">
+          <div class="title">6. Seasonal Changes</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>I love autumn. The weather is perfect.
+              <span class="vi-translation">Tôi yêu mùa thu. Thời tiết thật hoàn hảo.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Me too. Not too hot and not too cold.
+              <span class="vi-translation">Tôi cũng vậy. Không quá nóng và không quá lạnh.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('I love autumn. The weather is perfect. Me too. Not too hot and not too cold.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('I love autumn. The weather is perfect.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 7 -->
+        <div class="conv">
+          <div class="title">7. Weather Affecting Plans</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>We planned to have a picnic, but it looks like rain.
+              <span class="vi-translation">Chúng tôi đã lên kế hoạch đi dã ngoại, nhưng trông như sắp mưa.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Maybe we should reschedule for next weekend.
+              <span class="vi-translation">Có lẽ chúng ta nên dời lại cuối tuần sau.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('We planned to have a picnic, but it looks like rain. Maybe we should reschedule for next weekend.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('We planned to have a picnic, but it looks like rain.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 8 -->
+        <div class="conv">
+          <div class="title">8. Checking Temperature</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>What's the temperature right now?
+              <span class="vi-translation">Nhiệt độ hiện tại là bao nhiêu?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>It's 28 degrees Celsius. Quite comfortable.
+              <span class="vi-translation">28 độ C. Khá dễ chịu.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('What\'s the temperature right now? It\'s 28 degrees Celsius. Quite comfortable.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('What\'s the temperature right now?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 9 -->
+        <div class="conv">
+          <div class="title">9. Windy Day</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>It's very windy today. Be careful outside.
+              <span class="vi-translation">Hôm nay trời rất gió. Hãy cẩn thận khi ra ngoài.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Thanks. I'll hold onto my hat!
+              <span class="vi-translation">Cảm ơn. Tôi sẽ giữ chặt mũ!</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('It\'s very windy today. Be careful outside. Thanks. I\'ll hold onto my hat!')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('It\'s very windy today. Be careful outside.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 10 -->
+        <div class="conv">
+          <div class="title">10. Perfect Beach Weather</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>The weather is perfect for going to the beach.
+              <span class="vi-translation">Thời tiết hoàn hảo để đi biển.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Absolutely! Sunny but not too hot. Let's go!
+              <span class="vi-translation">Chắc chắn rồi! Nắng nhưng không quá nóng. Đi thôi!</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('The weather is perfect for going to the beach. Absolutely! Sunny but not too hot. Let\'s go!')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('The weather is perfect for going to the beach.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Practice Questions Section -->
+        <div class="practice-section">
+          <div class="practice-title">Practice Questions - Lesson 9</div>
+          
+          <div class="quiz">
+            <div class="q">1. How do you ask "Thời tiết thế nào?" in English?</div>
+            <div class="opt" onclick="selectOption(this)">A. What's the time?</div>
+            <div class="opt" onclick="selectOption(this)">B. What's the weather like?</div>
+            <div class="opt" onclick="selectOption(this)">C. What's the date?</div>
+            <div class="opt" onclick="selectOption(this)">D. What's your name?</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">2. What does "It's sunny today" mean?</div>
+            <div class="opt" onclick="selectOption(this)">A. Hôm nay trời mưa</div>
+            <div class="opt" onclick="selectOption(this)">B. Hôm nay trời nắng</div>
+            <div class="opt" onclick="selectOption(this)">C. Hôm nay trời lạnh</div>
+            <div class="opt" onclick="selectOption(this)">D. Hôm nay trời nhiều mây</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">3. How do you say "Trời đang mưa" in English?</div>
+            <div class="opt" onclick="selectOption(this)">A. It's snowing</div>
+            <div class="opt" onclick="selectOption(this)">B. It's windy</div>
+            <div class="opt" onclick="selectOption(this)">C. It's raining</div>
+            <div class="opt" onclick="selectOption(this)">D. It's cloudy</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">4. Translate: "Nhiệt độ là bao nhiêu?"</div>
+            <div class="opt" onclick="selectOption(this)">A. What's the time?</div>
+            <div class="opt" onclick="selectOption(this)">B. What's the temperature?</div>
+            <div class="opt" onclick="selectOption(this)">C. What's the date?</div>
+            <div class="opt" onclick="selectOption(this)">D. What's the weather?</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">5. What season comes after summer?</div>
+            <div class="opt" onclick="selectOption(this)">A. Spring</div>
+            <div class="opt" onclick="selectOption(this)">B. Winter</div>
+            <div class="opt" onclick="selectOption(this)">C. Autumn/Fall</div>
+            <div class="opt" onclick="selectOption(this)">D. Rainy season</div>
+          </div>
+
+          <button class="btn success" onclick="checkAnswers(9)" style="margin-top: 15px;">
+            <i class="fa-solid fa-check"></i> Check Answers
+          </button>
+          <div id="result9" style="margin-top: 10px; font-weight: bold;"></div>
+        </div>
+
+        <div class="actions">
+          <button class="btn secondary" onclick="showLesson('lesson8')"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+          <button class="btn primary" onclick="completeLesson(9)">Complete Lesson <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </section>
+
+      <!-- Lesson 10: Numbers & Time -->
+      <section id="lesson10" class="lesson" data-num="10">
+        <h2>Lesson 10: Numbers & Time</h2>
+        <div class="meta"><span><i class="fa-regular fa-clock"></i> 40–50 min</span><span><i class="fa-solid fa-signal"></i> Beginner</span></div>
+        <div class="objective"><strong>Objectives:</strong> Learn numbers, telling time, and basic math vocabulary.</div>
+        
+        <div class="section-title">Essential Phrases with Vietnamese Translation</div>
+        <div class="vgrid">
+          <div class="vcard">
+            <div class="word">What time is it?</div>
+            <div class="pron">/wɒt taɪm ɪz ɪt/</div>
+            <div class="muted">Bây giờ là mấy giờ?</div>
+            <div class="bubble">What time is it now? <span class="vi-translation">Bây giờ là mấy giờ?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('What time is it?')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('What time is it?')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">It's three o'clock</div>
+            <div class="pron">/ɪts θriː əˈklɒk/</div>
+            <div class="muted">Bây giờ là ba giờ</div>
+            <div class="bubble">It's three o'clock in the afternoon. <span class="vi-translation">Bây giờ là ba giờ chiều.</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('It\'s three o\'clock')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('It\'s three o\'clock')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">How much does it cost?</div>
+            <div class="pron">/haʊ mʌtʃ dʌz ɪt kɒst/</div>
+            <div class="muted">Cái này giá bao nhiêu?</div>
+            <div class="bubble">How much does this phone cost? <span class="vi-translation">Cái điện thoại này giá bao nhiêu?</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('How much does it cost?')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('How much does it cost?')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+
+          <div class="vcard">
+            <div class="word">I'd like to pay</div>
+            <div class="pron">/aɪd laɪk tə peɪ/</div>
+            <div class="muted">Tôi muốn thanh toán</div>
+            <div class="bubble">I'd like to pay by credit card. <span class="vi-translation">Tôi muốn thanh toán bằng thẻ tín dụng.</span></div>
+            <div class="row">
+              <button class="btn secondary" onclick="speakText('I\'d like to pay')"><i class="fa-solid fa-volume-high"></i>Listen</button>
+              <button class="btn primary" onclick="startRecording('I\'d like to pay')"><i class="fa-solid fa-microphone"></i>Practice</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">Conversation Practice (10 Dialogues)</div>
+
+        <!-- Conversation 1 -->
+        <div class="conv">
+          <div class="title">1. Asking for the Time</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>Excuse me, what time is it?
+              <span class="vi-translation">Xin lỗi, bây giờ là mấy giờ?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>It's half past two. 2:30.
+              <span class="vi-translation">Bây giờ là hai giờ rưỡi. 2:30.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('Excuse me, what time is it? It\'s half past two. 2:30.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('Excuse me, what time is it?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 2 -->
+        <div class="conv">
+          <div class="title">2. Making a Purchase</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>How much does this cost?
+              <span class="vi-translation">Cái này giá bao nhiêu?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>It's 75,000 VND. Would you like to buy it?
+              <span class="vi-translation">Giá 75,000 đồng. Bạn có muốn mua nó không?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('How much does this cost? It\'s 75,000 VND. Would you like to buy it?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('How much does this cost?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 3 -->
+        <div class="conv">
+          <div class="title">3. Scheduling an Appointment</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>What time is your appointment?
+              <span class="vi-translation">Cuộc hẹn của bạn lúc mấy giờ?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>At 3:15 PM. I need to leave soon.
+              <span class="vi-translation">Lúc 3:15 chiều. Tôi cần đi sớm.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('What time is your appointment? At 3:15 PM. I need to leave soon.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('What time is your appointment?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 4 -->
+        <div class="conv">
+          <div class="title">4. Counting Money</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>That will be 120,000 VND in total.
+              <span class="vi-translation">Tổng cộng là 120,000 đồng.</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>Here's 150,000 VND. How much change do I get?
+              <span class="vi-translation">Đây là 150,000 đồng. Tôi nhận lại bao nhiêu tiền thừa?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('That will be 120,000 VND in total. Here\'s 150,000 VND. How much change do I get?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('That will be 120,000 VND in total.')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 5 -->
+        <div class="conv">
+          <div class="title">5. Telling Time Precisely</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>When does the movie start?
+              <span class="vi-translation">Khi nào phim bắt đầu?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>It starts at quarter to seven. 6:45 PM.
+              <span class="vi-translation">Nó bắt đầu lúc bảy giờ kém mười lăm. 6:45 chiều.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('When does the movie start? It starts at quarter to seven. 6:45 PM.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('When does the movie start?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 6 -->
+        <div class="conv">
+          <div class="title">6. Age and Birthdays</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>How old are you?
+              <span class="vi-translation">Bạn bao nhiêu tuổi?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>I'm twenty-five years old. My birthday is in August.
+              <span class="vi-translation">Tôi hai mươi lăm tuổi. Sinh nhật tôi vào tháng Tám.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('How old are you? I\'m twenty-five years old. My birthday is in August.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('How old are you?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 7 -->
+        <div class="conv">
+          <div class="title">7. Phone Numbers</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>What's your phone number?
+              <span class="vi-translation">Số điện thoại của bạn là gì?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>It's 0912 345 678. Can you repeat that?
+              <span class="vi-translation">Là 0912 345 678. Bạn có thể nhắc lại không?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('What\'s your phone number? It\'s 0912 345 678. Can you repeat that?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('What\'s your phone number?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 8 -->
+        <div class="conv">
+          <div class="title">8. Duration of Time</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>How long have you been studying English?
+              <span class="vi-translation">Bạn đã học tiếng Anh bao lâu rồi?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>For about six months. I started in January.
+              <span class="vi-translation">Khoảng sáu tháng. Tôi bắt đầu vào tháng Một.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('How long have you been studying English? For about six months. I started in January.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('How long have you been studying English?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 9 -->
+        <div class="conv">
+          <div class="title">9. Quantity and Amount</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>How many people are in your family?
+              <span class="vi-translation">Có bao nhiêu người trong gia đình bạn?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>There are five of us: my parents, two brothers, and me.
+              <span class="vi-translation">Có năm người chúng tôi: bố mẹ tôi, hai anh trai, và tôi.</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('How many people are in your family? There are five of us: my parents, two brothers, and me.')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('How many people are in your family?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Conversation 10 -->
+        <div class="conv">
+          <div class="title">10. Future Time Reference</div>
+          <div class="dialog-line">
+            <span class="speaker">A</span>
+            <span>When will you finish work today?
+              <span class="vi-translation">Khi nào bạn sẽ kết thúc công việc hôm nay?</span>
+            </span>
+          </div>
+          <div class="dialog-line">
+            <span class="speaker">B</span>
+            <span>I should be finished by 5:30. Do you want to meet then?
+              <span class="vi-translation">Tôi sẽ hoàn thành lúc 5:30. Bạn có muốn gặp nhau lúc đó không?</span>
+            </span>
+          </div>
+          <div class="row">
+            <button class="btn secondary" onclick="speakText('When will you finish work today? I should be finished by 5:30. Do you want to meet then?')"><i class="fa-solid fa-volume-high"></i>Listen to Conversation</button>
+            <button class="btn primary" onclick="startRecording('When will you finish work today?')"><i class="fa-solid fa-microphone"></i>Practice Speaking</button>
+          </div>
+        </div>
+
+        <!-- Practice Questions Section -->
+        <div class="practice-section">
+          <div class="practice-title">Practice Questions - Lesson 10</div>
+          
+          <div class="quiz">
+            <div class="q">1. How do you ask "Bây giờ là mấy giờ?" in English?</div>
+            <div class="opt" onclick="selectOption(this)">A. What day is it?</div>
+            <div class="opt" onclick="selectOption(this)">B. What time is it?</div>
+            <div class="opt" onclick="selectOption(this)">C. What month is it?</div>
+            <div class="opt" onclick="selectOption(this)">D. What year is it?</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">2. What does "It's three o'clock" mean?</div>
+            <div class="opt" onclick="selectOption(this)">A. Bây giờ là ba giờ rưỡi</div>
+            <div class="opt" onclick="selectOption(this)">B. Bây giờ là ba giờ kém</div>
+            <div class="opt" onclick="selectOption(this)">C. Bây giờ là ba giờ</div>
+            <div class="opt" onclick="selectOption(this)">D. Bây giờ là ba giờ mười lăm</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">3. How do you say "Cái này giá bao nhiêu?" in English?</div>
+            <div class="opt" onclick="selectOption(this)">A. How much does it cost?</div>
+            <div class="opt" onclick="selectOption(this)">B. How many are there?</div>
+            <div class="opt" onclick="selectOption(this)">C. How old is it?</div>
+            <div class="opt" onclick="selectOption(this)">D. How big is it?</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">4. Translate: "Tôi muốn thanh toán"</div>
+            <div class="opt" onclick="selectOption(this)">A. I'd like to pay</div>
+            <div class="opt" onclick="selectOption(this)">B. I'd like to buy</div>
+            <div class="opt" onclick="selectOption(this)">C. I'd like to sell</div>
+            <div class="opt" onclick="selectOption(this)">D. I'd like to eat</div>
+          </div>
+
+          <div class="quiz">
+            <div class="q">5. How do you say "2:45" in English?</div>
+            <div class="opt" onclick="selectOption(this)">A. Two forty-five</div>
+            <div class="opt" onclick="selectOption(this)">B. Quarter to three</div>
+            <div class="opt" onclick="selectOption(this)">C. Both A and B</div>
+            <div class="opt" onclick="selectOption(this)">D. Two fifteen</div>
+          </div>
+
+          <button class="btn success" onclick="checkAnswers(10)" style="margin-top: 15px;">
+            <i class="fa-solid fa-check"></i> Check Answers
+          </button>
+          <div id="result10" style="margin-top: 10px; font-weight: bold;"></div>
+        </div>
+
+        <div class="actions">
+          <button class="btn secondary" onclick="showLesson('lesson9')"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+          <button class="btn primary" onclick="completeLesson(10)">Complete Course <i class="fa-solid fa-flag-checkered"></i></button>
+        </div>
+      </section>
+
+      <div id="rec" class="record"><span class="pulse"></span> Recording... <button class="btn outline" onclick="stopRecording()"><i class="fa-solid fa-stop"></i> Stop</button></div>
+      <div id="fb" class="feedback"></div>
+    </main>
+  </div>
+
+<script>
+const TOTAL = 10;
+
+// Progress management
+function getProgress(){return JSON.parse(localStorage.getItem('pe_progress')||'{"done":[], "last":"lesson1"}');}
+function setProgress(p){localStorage.setItem('pe_progress',JSON.stringify(p));}
+
+function updateProgressDisplay(){
+  const p=getProgress(); 
+  const pct=Math.round((p.done.length/TOTAL)*100);
+  document.getElementById('progressText').textContent=pct+'%';
+  document.getElementById('progressBar').style.width=pct+'%';
+  
+  const buttons=[...document.querySelectorAll('#nav button')];
+  buttons.forEach((b,i)=>{
+    const n=i+1;
+    if(n===1||p.done.includes(n-1)){
+      b.classList.remove('locked'); 
+      b.querySelector('i').className='fa-solid fa-play';
+    }
+  });
+}
+
+function showLesson(id){
+  document.querySelectorAll('.lesson').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  
+  document.querySelectorAll('#nav button').forEach(b=>b.classList.remove('active'));
+  const idx=parseInt(document.getElementById(id).dataset.num)-1;
+  document.querySelectorAll('#nav button')[idx].classList.add('active');
+  
+  const p=getProgress(); 
+  p.last=id; 
+  setProgress(p);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function completeLesson(n){
+  const p=getProgress();
+  if(!p.done.includes(n)) p.done.push(n);
+  
+  if(n<TOTAL){
+    const nextBtn=document.querySelectorAll('#nav button')[n];
+    nextBtn.classList.remove('locked');
+    nextBtn.querySelector('i').className='fa-solid fa-play';
+  }
+  
+  setProgress(p);
+  updateProgressDisplay();
+  
+  if(n === 10) {
+    alert('Congratulations! You have completed the entire course! 🎉');
+  } else {
+    alert('Lesson '+n+' completed!');
+  }
+  
+  if(n<TOTAL) showLesson('lesson'+(n+1));
+}
+
+function resetProgress(){ 
+  if(confirm('Reset your course progress?')){ 
+    localStorage.removeItem('pe_progress'); 
+    location.reload(); 
+  } 
+}
+
+// Speech functions
+function speakText(text){ 
+  if(!('speechSynthesis' in window)){ 
+    alert('Speech Synthesis not supported.'); 
+    return; 
+  } 
+  const u=new SpeechSynthesisUtterance(text); 
+  u.lang='en-US'; 
+  u.rate=.95; 
+  u.pitch=1; 
+  speechSynthesis.cancel(); 
+  speechSynthesis.speak(u); 
+}
+
+let mediaRecorder,isRec=false,audioChunks=[],expected='';
+
+async function startRecording(text){ 
+  expected=text; 
+  try{ 
+    const stream=await navigator.mediaDevices.getUserMedia({audio:true}); 
+    mediaRecorder=new MediaRecorder(stream); 
+    audioChunks=[]; 
+    mediaRecorder.ondataavailable=e=>audioChunks.push(e.data); 
+    mediaRecorder.onstop=()=>{ 
+      stream.getTracks().forEach(t=>t.stop()); 
+      evaluatePronunciation(); 
+    }; 
+    mediaRecorder.start(); 
+    isRec=true; 
+    document.getElementById('rec').style.display='flex'; 
+    document.getElementById('fb').style.display='none'; 
+    setTimeout(()=>{ if(isRec) stopRecording(); },8000); 
+  }catch(err){ 
+    alert('Cannot access microphone. Check permissions.'); 
+  } 
+}
+
+function stopRecording(){ 
+  if(mediaRecorder && isRec){ 
+    mediaRecorder.stop(); 
+    isRec=false; 
+    document.getElementById('rec').style.display='none'; 
+  } 
+}
+
+function evaluatePronunciation(){ 
+  const good = Math.random()>.35; 
+  const fb=document.getElementById('fb'); 
+  fb.style.display='block'; 
+  if(good){
+    fb.className='feedback good';
+    fb.innerHTML='<b><i class="fa-solid fa-circle-check"></i> Great!</b> Phát âm rõ ràng và tự nhiên.';
+  } else {
+    fb.className='feedback bad';
+    fb.innerHTML='<b><i class="fa-solid fa-triangle-exclamation"></i> Cần luyện thêm.</b> Tập trung vào ngữ điệu và trọng âm. <button class="btn outline" style="margin-left:8px" onclick="speakText(expected)"><i class="fa-solid fa-volume-high"></i> Nghe lại</button>';
+  } 
+  fb.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+// Practice questions functions
+function selectOption(el){ 
+  const parent = el.parentElement; 
+  [...parent.children].forEach(c=>{ 
+    if(c.classList && c.classList.contains('opt')) c.classList.remove('selected'); 
+  }); 
+  el.classList.add('selected'); 
+}
+
+function checkAnswers(lessonNum) {
+  const correctAnswers = {
+    1: ['B', 'C', 'C', 'B', 'C'],
+    2: ['B', 'C', 'A', 'C', 'B'],
+    3: ['B', 'C', 'B', 'B', 'C'],
+    4: ['B', 'B', 'C', 'B', 'A'],
+    5: ['B', 'C', 'C', 'B', 'A'],
+    6: ['B', 'B', 'B', 'C', 'B'],
+    7: ['B', 'B', 'C', 'B', 'B'],
+    8: ['B', 'B', 'B', 'B', 'B'],
+    9: ['B', 'B', 'C', 'B', 'C'],
+    10: ['B', 'C', 'A', 'A', 'C']
+  };
+
+  const quizzes = document.querySelectorAll(`#lesson${lessonNum} .quiz`);
+  let score = 0;
+  let total = quizzes.length;
+
+  quizzes.forEach((quiz, index) => {
+    const selected = quiz.querySelector('.opt.selected');
+    if (selected) {
+      const userAnswer = selected.textContent.charAt(0);
+      if (userAnswer === correctAnswers[lessonNum][index]) {
+        score++;
+        selected.style.background = '#dcfce7';
+      } else {
+        selected.style.background = '#fecaca';
+        // Highlight correct answer
+        const options = quiz.querySelectorAll('.opt');
+        options.forEach(opt => {
+          if (opt.textContent.charAt(0) === correctAnswers[lessonNum][index]) {
+            opt.style.background = '#dcfce7';
+            opt.style.border = '2px solid #10b981';
+          }
+        });
+      }
+    }
+  });
+
+  const resultElement = document.getElementById(`result${lessonNum}`);
+  const percentage = Math.round((score / total) * 100);
+  
+  if (percentage >= 80) {
+    resultElement.innerHTML = `<span style="color: var(--success)">Excellent! You got ${score}/${total} (${percentage}%)</span>`;
+  } else if (percentage >= 60) {
+    resultElement.innerHTML = `<span style="color: var(--accent)">Good job! You got ${score}/${total} (${percentage}%)</span>`;
+  } else {
+    resultElement.innerHTML = `<span style="color: var(--danger)">Keep practicing! You got ${score}/${total} (${percentage}%)</span>`;
+  }
+}
+
+// Initialize
+(function init(){ 
+  const p=getProgress(); 
+  updateProgressDisplay(); 
+  showLesson(p.last||'lesson1'); 
+})();
+</script>
+</body>
+</html>
