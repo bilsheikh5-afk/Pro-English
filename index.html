@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#1a5276">
   <title>ProEnglish - Vietnamese Edition</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
@@ -3509,6 +3511,13 @@ function checkAnswers(lessonNum) {
   updateProgressDisplay(); 
   showLesson(p.last||'lesson1'); 
 })();
+  if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js")
+      .then(reg => console.log("✅ Service Worker registered"))
+      .catch(err => console.log("❌ Service Worker failed:", err));
+  });
+  }
 </script>
 </body>
 </html>
